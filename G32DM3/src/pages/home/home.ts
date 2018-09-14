@@ -2,14 +2,21 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SalidaPage } from '../salida/salida';
 
+import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
+  tasksRef: AngularFireList<any>;
+  tasks: Observable<any[]>;
   empresas=[];
   constructor(public navCtrl: NavController) {
+
+
     this.empresas = [
       { Nombre:"Ibermática",
         imagen:"../../assets/imgs/1.jpg",
@@ -33,7 +40,7 @@ export class HomePage {
         imagen:"../../assets/imgs/4.png",
         descripccion:"Mantenimiento",
         descripccion2:"Decathlon es una cadena de establecimientos de grandes superficies, dedicada a la venta y distribución de material deportivo, filial del grupo francés Mulliez. Presente en veintidós países, Decathlon destaca por un fuerte desarrollo de sus marcas de distribuidor",
-        descripccion3:"-Llevar a cabo el mantenimiento preventivo y correctivo de las instalaciones. Para ello debe tener conocimientos de electricidad, electrónica y mecánica básica. -Nociones de neumática e hidráulica. \n -Conocimiento sobre cómo soldar una pieza, usar el torno y la fresadora. No a nivel avanzado pero si iniciado ya en estos trabajos. <br> El perfil es más el de una persona con formación práctica en taller. <br> Sería muy interesante que tenga experiencia como mantenedor o montador en algún ámbito de máquinas."
+        descripccion3:"-Llevar a cabo el mantenimiento preventivo y correctivo de las instalaciones. Para ello debe tener conocimientos de electricidad, electrónica y mecánica básica. -Nociones de neumática e hidráulica.  -Conocimiento sobre cómo soldar una pieza, usar el torno y la fresadora. No a nivel avanzado pero si iniciado ya en estos trabajos. <br> El perfil es más el de una persona con formación práctica en taller. <br> Sería muy interesante que tenga experiencia como mantenedor o montador en algún ámbito de máquinas."
       },
       { Nombre:"Allianz",
         imagen:"../../assets/imgs/5.jpg",

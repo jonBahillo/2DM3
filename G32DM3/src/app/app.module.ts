@@ -8,6 +8,19 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SalidaPage } from '../pages/salida/salida';
 
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAvYzM1bqFjoVi-VGMHeDbN0XwFsYDtLQ0",
+  authDomain: "demo104-60efc.firebaseapp.com",
+  databaseURL: "https://demo104-60efc.firebaseio.com",
+  projectId: "demo104-60efc",
+  storageBucket: "demo104-60efc.appspot.com",
+  messagingSenderId: "903778168776"
+};
+
 @NgModule({
   declarations: [
     MyApp,
