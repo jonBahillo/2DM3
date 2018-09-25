@@ -9,7 +9,7 @@ import { AlertController } from 'ionic-angular';
 })
 export class SalidaPage {
 item;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
     this.item=navParams.data.item;
   }
 
@@ -17,26 +17,26 @@ item;
     console.log('ionViewDidLoad SalidaPage');
   }
 
-  doConfirm() {
-    let confirm = this.alerCtrl.create({
-      title: 'Use this lightsaber?',
-      message: 'Do you agree to use this lightsaber to do good across the intergalactic galaxy?',
-      buttons: [
-        {
-          text: 'Disagree',
-          handler: () => {
-            console.log('Disagree clicked');
+  showConfirm() {
+      const confirm = this.alertCtrl.create({
+        title: '¿Quieres participar?',
+        message: '¿Quieres enviar el curriculum para poder participar?',
+        buttons: [
+          {
+            text: 'CANCELAR',
+            handler: () => {
+              console.log('Disagree clicked');
+            }
+          },
+          {
+            text: 'SI',
+            handler: () => {
+              console.log('Agree clicked');
+            }
           }
-        },
-        {
-          text: 'Agree',
-          handler: () => {
-            console.log('Agree clicked');
-          }
-        }
-      ]
-    });
-    confirm.present()
-  }
+        ]
+      });
+      confirm.present();
+    }
 
 }
