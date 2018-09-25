@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SalidaPage } from '../salida/salida';
 
-import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+
+//import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -11,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class HomePage {
 
-  tasksRef: AngularFireList<any>;
+
   tasks: Observable<any[]>;
   empresas=[];
   constructor(public navCtrl: NavController) {
