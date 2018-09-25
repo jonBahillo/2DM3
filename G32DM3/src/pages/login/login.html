@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Mi Cafeteria</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div text-center>
+    <ion-card>
+      <ion-card-header>
+        <img src="../../assets/productos/logo.jpeg" />
+      </ion-card-header>
+      <ion-card-content>
+        <h2>{{titulo}}</h2>
+      </ion-card-content>
+
+      <ion-list>
+
+          <ion-item>
+              <ion-label stacked>Correo</ion-label>
+              <ion-input type="email" [(ngModel)]="correo"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label stacked>Contraseña</ion-label>
+              <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+          </ion-item>
+
+      </ion-list>
+ 
+            <button ion-button 
+                  block [disabled]="boton == false" (click)="acceder(usu)">Acceder
+            </button>
+
+            <button ion-button color="secondary"
+                  *ngIf="ocultar == true"
+                   block (click)="ver_productos(item)">Ver productos
+            </button>
+
+      <div>
+            {{contrasena}}
+      </div>
+
+    </ion-card>
+      
+  </div>
+
+
+</ion-content>
