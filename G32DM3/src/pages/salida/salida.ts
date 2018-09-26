@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 import { DatosProvider } from '../../providers/datos/datos';
 
@@ -13,7 +14,7 @@ import { DatosProvider } from '../../providers/datos/datos';
 })
 export class SalidaPage {
 item;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public storage:Storage) {
     this.item=navParams.data.item;
   }
 
@@ -21,7 +22,7 @@ item;
     console.log('ionViewDidLoad SalidaPage');
   }
 
-  showConfirm() {
+  showConfirm(item:any) {
       const confirm = this.alertCtrl.create({
         title: '¿Quieres participar?',
         message: '¿Quieres enviar el curriculum para poder participar?',
@@ -35,6 +36,8 @@ item;
           {
             text: 'SI',
             handler: () => {
+
+              console.log(this.item);
               console.log('Agree clicked');
             }
           }

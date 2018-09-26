@@ -8,11 +8,12 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SalidaPage } from '../pages/salida/salida';
 import { LoginPage } from '../pages/login/login';
+
+import { IonicStorageModule } from '@ionic/storage';
 import { DatosProvider } from '../providers/datos/datos';
 
-
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+//import { AngularFireModule } from 'angularfire2';
+/*import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 const firebaseConfig = {
@@ -22,7 +23,7 @@ const firebaseConfig = {
   projectId: "demo104-60efc",
   storageBucket: "demo104-60efc.appspot.com",
   messagingSenderId: "903778168776"
-};
+};*/
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
