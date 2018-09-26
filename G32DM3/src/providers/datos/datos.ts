@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { Storage } from '@ionic/storage';
 /*
   Generated class for the DatosProvider provider.
 
@@ -9,8 +9,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DatosProvider {
 	empresas:any;
-  constructor() {
-    
+	bandeja:any [] = [];
+  constructor(public storage: Storage) {
 
   	this.empresas = [
       { Nombre:"Ibermática",
@@ -45,9 +45,15 @@ export class DatosProvider {
       }
     ]
 
-
-
-
   }
+	guardar_productos(){
+
+/*	if( this.platform.is('cordova')){
+		this.storage.set('pedidos', this.pedidos);
+	}else{*/
+		localStorage.setItem("bandeja", JSON.stringify( this.bandeja ));
+	//	console.log(this.usuarios);
+	//}
+}
 
 }

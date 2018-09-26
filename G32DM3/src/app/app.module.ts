@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SalidaPage } from '../pages/salida/salida';
 import { LoginPage } from '../pages/login/login';
+import { UltimaPage } from '../pages/ultima/ultima';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { DatosProvider } from '../providers/datos/datos';
@@ -30,7 +31,8 @@ const firebaseConfig = {
     MyApp,
     HomePage,
     SalidaPage,
-    LoginPage
+    LoginPage,
+    UltimaPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ const firebaseConfig = {
     MyApp,
     HomePage,
     SalidaPage,
-    LoginPage
+    LoginPage,
+    UltimaPage
   ],
   providers: [
     StatusBar,

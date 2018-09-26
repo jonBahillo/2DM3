@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-
+import { UltimaPage } from '../ultima/ultima';
 import { DatosProvider } from '../../providers/datos/datos';
 
 
@@ -14,7 +14,7 @@ import { DatosProvider } from '../../providers/datos/datos';
 })
 export class SalidaPage {
 item;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public storage:Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public storage:Storage,public datos: DatosProvider) {
     this.item=navParams.data.item;
   }
 
@@ -36,7 +36,8 @@ item;
           {
             text: 'SI',
             handler: () => {
-
+              this.datos.bandeja.push(item);
+              this.datos.guardar_productos()
               console.log(this.item);
               console.log('Agree clicked');
             }
