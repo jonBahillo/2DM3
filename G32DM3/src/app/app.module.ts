@@ -8,10 +8,12 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SalidaPage } from '../pages/salida/salida';
 import { LoginPage } from '../pages/login/login';
+import { DatosProvider } from '../providers/datos/datos';
 
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAvYzM1bqFjoVi-VGMHeDbN0XwFsYDtLQ0",
@@ -43,7 +45,8 @@ const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatosProvider
   ]
 })
 export class AppModule {}
