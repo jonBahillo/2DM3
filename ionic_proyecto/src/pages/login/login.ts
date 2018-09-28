@@ -44,11 +44,11 @@ localStorage.setItem("usuarios", JSON.stringify( this.usuarios ));
 
 
   acceder(){
-    console.log(this.Nombres);
+  /*  console.log(this.Nombres);
   let encontrado:boolean =false;
   console.log(this.Nombre);
  console.log(this.contrasena);
-
+*/
 
 
 /*
