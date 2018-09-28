@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
-
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase';
 /**
  * Generated class for the LoginPage page.
  *
@@ -16,48 +18,52 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
 
-	usuarios:any;
-  correo:string = "";
-  contrasena:string= "";
+//	usuarios:any;
+//  correo:string = "";
+//  contrasena:string= "";
   titulo="Autentificate";
   ocultar = false;
   boton = true;
   items:any []=[];
+  Nombres: Observable<any[]>;
+  constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.Nombres = afDB.list('Nombres').valueChanges();
 
 
-     //ordenador
-
-	this.usuarios = [
+/*	this.usuarios = [
     {nombre: 'Miren', apellido: 'Gurrutxurtu', correo: 'a', contrasena: 'a', foto: '../../assets/usuarios/miren.png'},
     {nombre: 'Pedro', apellido: 'Garcia', correo: 'b', contrasena: 'b', foto: '../../assets/usuarios/pedro.png'}
     ]
 
 localStorage.setItem("usuarios", JSON.stringify( this.usuarios ));
-    console.log(this.usuarios);
+    console.log(this.usuarios);*/
 
   }
 
 
 
   acceder(){
+    console.log(this.Nombres);
   let encontrado:boolean =false;
-  console.log(this.correo);
-  console.log(this.contrasena);
+  console.log(this.Nombre);
+ console.log(this.contrasena);
 
+
+
+/*
  for (var i = 0; i < this.usuarios.length; ++i) {
     if(this.correo == this.usuarios[i].correo && this.contrasena == this.usuarios[i].contrasena ) {
       console.log('usuario en registro ' + this.usuarios[i].correo);
         this.titulo="Usuario autentificado";
-        this.usuarios.push(this.usuarios[i]); 
+        this.usuarios.push(this.usuarios[i]);
         //this.guardar_storage();
         this.ocultar=true;
         this.boton=false;
         //el encontrado no es necesario
         encontrado=true;
-        break;     
-    } 
+        break;
+    }
   }
 
  if (!encontrado){
@@ -65,12 +71,12 @@ localStorage.setItem("usuarios", JSON.stringify( this.usuarios ));
       this.correo = "";
       this.contrasena= "";
       this.titulo="Autentificate";
-    }
+    }*/
 
 }
 
 ver_productos(){
-  console.log('accediendo a productos');
+  console.log('Accediendo');
   this.navCtrl.push(HomePage);
 
   }

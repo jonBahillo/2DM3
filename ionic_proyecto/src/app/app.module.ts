@@ -9,6 +9,21 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { RegistroPage } from '../pages/registro/registro';
 
+//firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+export const firebaseConfig ={
+    apiKey: "AIzaSyDvybBq5y_YJkGXXKH91kZtNZRyjIo1X70",
+    authDomain: "dm3-de0f2.firebaseapp.com",
+    databaseURL: "https://dm3-de0f2.firebaseio.com",
+    projectId: "dm3-de0f2",
+    storageBucket: "dm3-de0f2.appspot.com",
+    messagingSenderId: "167059207091"
+  };
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -18,7 +33,10 @@ import { RegistroPage } from '../pages/registro/registro';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,6 +48,7 @@ import { RegistroPage } from '../pages/registro/registro';
   providers: [
     StatusBar,
     SplashScreen,
+    AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
