@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the GestionperfilesPage page.
+ * Generated class for the GestionarventasPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-gestionperfiles',
-  templateUrl: 'gestionperfiles.html',
+  selector: 'page-gestionarventas',
+  templateUrl: 'gestionarventas.html',
 })
-export class GestionperfilesPage {
+export class GestionarventasPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad GestionperfilesPage');
+    console.log('ionViewDidLoad GestionarventasPage');
   }
 
 }

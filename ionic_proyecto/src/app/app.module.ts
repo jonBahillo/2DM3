@@ -10,6 +10,8 @@ import { Home2Page } from '../pages/home2/home2';
 import { LoginPage } from '../pages/login/login';
 import { RegistroPage } from '../pages/registro/registro';
 import { GestionclientesPage } from '../pages/gestionclientes/gestionclientes';
+import { GestionarempleadosPage } from '../pages/gestionarempleados/gestionarempleados';
+import { GestionarperfilesPage } from '../pages/gestionarperfiles/gestionarperfiles';
 
 //firebase
 import { AngularFireModule } from '@angular/fire';
@@ -34,7 +36,10 @@ export const firebaseConfig ={
     Home2Page,
     LoginPage,
     RegistroPage,
-    GestionclientesPage
+    GestionclientesPage,
+    GestionarempleadosPage,
+    GestionarperfilesPage,
+    GestionarproyectosPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,10 @@ export const firebaseConfig ={
     Home2Page,
     LoginPage,
     RegistroPage,
-    GestionclientesPage
+    GestionclientesPage,
+    GestionarempleadosPage,
+    GestionarperfilesPage,
+    GestionarproyectosPage
   ],
   providers: [
     StatusBar,
