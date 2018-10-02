@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ProyectobuscadoPage } from '../../pages/proyectobuscado/proyectobuscado'
 
 /**
- * Generated class for the VerproyectosPage page.
+ * Generated class for the ProyectobuscadoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +10,16 @@ import { ProyectobuscadoPage } from '../../pages/proyectobuscado/proyectobuscado
 
 @IonicPage()
 @Component({
-  selector: 'page-verproyectos',
-  templateUrl: 'verproyectos.html',
+  selector: 'page-proyectobuscado',
+  templateUrl: 'proyectobuscado.html',
 })
-export class VerproyectosPage {
+export class ProyectobuscadoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad VerproyectosPage');
+    console.log('ionViewDidLoad ProyectobuscadoPage');
   }
-abrirPagina11(){
-		this.navCtrl.push(ProyectobuscadoPage);
-	}
+
 }

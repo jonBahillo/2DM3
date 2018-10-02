@@ -19,6 +19,7 @@ import { RegistroPage } from '../pages/registro/registro';
 import { VernotificacionesPage } from '../pages/vernotificaciones/vernotificaciones';
 import { VerperfilPage } from '../pages/verperfil/verperfil';
 import { VerproyectosPage } from '../pages/verproyectos/verproyectos';  
+import { ProyectobuscadoPage } from '../pages/proyectobuscado/proyectobuscado'; 
 
 //firebase
 import { AngularFireModule } from '@angular/fire';
@@ -51,7 +52,8 @@ export const firebaseConfig ={
     BusquedaempleadosPage,
     VernotificacionesPage,
     VerperfilPage,
-    VerproyectosPage
+    VerproyectosPage,
+    ProyectobuscadoPage
   ],
   imports: [
     BrowserModule,
@@ -75,7 +77,8 @@ export const firebaseConfig ={
     BusquedaempleadosPage,
     VernotificacionesPage,
     VerperfilPage,
-    VerproyectosPage
+    VerproyectosPage,
+    ProyectobuscadoPage
   ],
   providers: [
     StatusBar,
