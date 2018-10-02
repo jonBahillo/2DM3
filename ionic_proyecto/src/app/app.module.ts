@@ -9,11 +9,13 @@ import { HomePage } from '../pages/home/home';
 import { Home2Page } from '../pages/home2/home2';
 import { LoginPage } from '../pages/login/login';
 import { RegistroPage } from '../pages/registro/registro';
+import { GestionclientesPage } from '../pages/gestionclientes/gestionclientes';
 
 //firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+
 
 export const firebaseConfig ={
     apiKey: "AIzaSyDvybBq5y_YJkGXXKH91kZtNZRyjIo1X70",
@@ -31,7 +33,8 @@ export const firebaseConfig ={
     HomePage,
     Home2Page,
     LoginPage,
-    RegistroPage
+    RegistroPage,
+    GestionclientesPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ export const firebaseConfig ={
     HomePage,
     Home2Page,
     LoginPage,
-    RegistroPage
+    RegistroPage,
+    GestionclientesPage
   ],
   providers: [
     StatusBar,
