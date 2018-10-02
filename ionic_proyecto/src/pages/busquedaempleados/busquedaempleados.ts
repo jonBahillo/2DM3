@@ -1,25 +1,28 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the BusquedaempleadosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
-  selector: 'page-busquedaempleados',
-  templateUrl: 'busquedaempleados.html',
+  templateUrl: 'busquedaempleados.html'
 })
 export class BusquedaempleadosPage {
+  items: Array<string>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ngOnInit() {
+    this.setItems();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BusquedaempleadosPage');
+  setItems() {
+    this.items = ['Mikel', 'Gorka', 'Iñaki', 'Jon'];
   }
 
+  filterItems(ev: any) {
+    this.setItems();
+    let val = ev.target.value;
+
+    if (val && val.trim() !== '') {
+      this.items = this.items.filter(function(item) {
+        return item.toLowerCase().includes(val.toLowerCase());
+      });
+    }
+  }
 }

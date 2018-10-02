@@ -1,18 +1,24 @@
-<!--
-  Generated template for the BusquedaempleadosPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>busquedaempleados</ion-title>
+  <ion-navbar no-border-bottom>
+    <ion-title>Searchbar</ion-title>
   </ion-navbar>
 
 </ion-header>
 
+<ion-content>
 
-<ion-content padding>
+  <ion-searchbar placeholder="Filter Items with Cancel" showCancelButton color="danger" (ionInput)="filterItems($event)"></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item }}<button ion-button clear item-end>Ver</button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
+
+
+<ion-footer>
+
+</ion-footer>

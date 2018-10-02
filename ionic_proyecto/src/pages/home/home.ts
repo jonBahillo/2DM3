@@ -18,11 +18,6 @@ export class HomePage {
 
   }
 
-  	abrirPagina(){
-		this.navCtrl.push(GestionarofertasPage);
-
-	}
-
 	abrirPagina2(){
 		this.navCtrl.push(GestionarempleadosPage);
 
