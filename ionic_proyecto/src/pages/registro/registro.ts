@@ -38,5 +38,4 @@ export class RegistroPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistroPage');
   }
-
 }

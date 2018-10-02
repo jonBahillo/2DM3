@@ -10,8 +10,16 @@ import { Home2Page } from '../pages/home2/home2';
 import { LoginPage } from '../pages/login/login';
 import { RegistroPage } from '../pages/registro/registro';
 import { GestionclientesPage } from '../pages/gestionclientes/gestionclientes';
+
 import { GestionarempleadosPage } from '../pages/gestionarempleados/gestionarempleados';
 import { GestionarperfilesPage } from '../pages/gestionarperfiles/gestionarperfiles';
+import { VernotificacionesPage } from '../pages/vernotificaciones/vernotificaciones';
+import { VerperfilPage } from '../pages/verperfil/verperfil';
+import { VerproyectosPage } from '../pages/verproyectos/verproyectos';
+import { GestionarempleadosPage } from '../pages/gestionarempleados/gestionarempleados';
+import { GestionarperfilesPage } from '../pages/gestionarperfiles/gestionarperfiles';
+import { GestionarproyectosPage } from '../pages/gestionarproyectos/gestionarproyectos';
+
 
 //firebase
 import { AngularFireModule } from '@angular/fire';
