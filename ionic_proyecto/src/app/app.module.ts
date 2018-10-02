@@ -5,22 +5,21 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+
+import { BusquedaempleadosPage } from '../pages/busquedaempleados/busquedaempleados';
+import { GestionarempleadosPage } from '../pages/gestionarempleados/gestionarempleados';
+import { GestionarperfilesPage } from '../pages/gestionarperfiles/gestionarperfiles';
+import { GestionarproyectosPage } from '../pages/gestionarproyectos/gestionarproyectos';
+import { GestionarventasPage } from '../pages/gestionarventas/gestionarventas';
+import { GestionclientesPage } from '../pages/gestionclientes/gestionclientes';
 import { HomePage } from '../pages/home/home';
 import { Home2Page } from '../pages/home2/home2';
 import { LoginPage } from '../pages/login/login';
 import { RegistroPage } from '../pages/registro/registro';
-import { GestionclientesPage } from '../pages/gestionclientes/gestionclientes';
-
-import { GestionarempleadosPage } from '../pages/gestionarempleados/gestionarempleados';
-import { GestionarperfilesPage } from '../pages/gestionarperfiles/gestionarperfiles';
 import { VernotificacionesPage } from '../pages/vernotificaciones/vernotificaciones';
 import { VerperfilPage } from '../pages/verperfil/verperfil';
-import { VerproyectosPage } from '../pages/verproyectos/verproyectos';
-import { GestionarempleadosPage } from '../pages/gestionarempleados/gestionarempleados';
-import { GestionarperfilesPage } from '../pages/gestionarperfiles/gestionarperfiles';
-import { GestionarproyectosPage } from '../pages/gestionarproyectos/gestionarproyectos';
-import { GestionarofertasPage } from '../pages/gestionarofertas/gestionarofertas';
-import { GestionarventasPage } from '../pages/gestionarventas/gestionarventas';
+import { VerproyectosPage } from '../pages/verproyectos/verproyectos';  
+
 //firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
@@ -48,8 +47,10 @@ export const firebaseConfig ={
     GestionarempleadosPage,
     GestionarperfilesPage,
     GestionarproyectosPage,
-    GestionarofertasPage,
-    GestionarventasPage
+    BusquedaempleadosPage,
+    VernotificacionesPage,
+    VerperfilPage,
+    VerproyectosPage
   ],
   imports: [
     BrowserModule,
@@ -69,9 +70,10 @@ export const firebaseConfig ={
     GestionarempleadosPage,
     GestionarperfilesPage,
     GestionarproyectosPage,
-    GestionarofertasPage,
-    GestionarventasPage
-
+    BusquedaempleadosPage,
+    VernotificacionesPage,
+    VerperfilPage,
+    VerproyectosPage
   ],
   providers: [
     StatusBar,
