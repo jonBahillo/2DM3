@@ -24,54 +24,52 @@ export class LoginPage {
   titulo="Autentificate";
   ocultar = false;
   boton = true;
+  dni = "";
+  contrasena="";
+  i = 1;
   items:any []=[];
   Nombres: Observable<any[]>;
   constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
 
-    this.Nombres = afDB.list('Nombres').valueChanges();
 
+this.Nombres = afDB.list('/Empleados').valueChanges();
 
-/*	this.usuarios = [
-    {nombre: 'Miren', apellido: 'Gurrutxurtu', correo: 'a', contrasena: 'a', foto: '../../assets/usuarios/miren.png'},
-    {nombre: 'Pedro', apellido: 'Garcia', correo: 'b', contrasena: 'b', foto: '../../assets/usuarios/pedro.png'}
-    ]
-
-localStorage.setItem("usuarios", JSON.stringify( this.usuarios ));
-    console.log(this.usuarios);*/
 
   }
 
 
 
-  acceder(){
-  /*  console.log(this.Nombres);
+acceder(){
   let encontrado:boolean =false;
-  console.log(this.Nombre);
- console.log(this.contrasena);
-*/
 
+const personRef2: firebase.database.Reference = firebase.database().ref('/Empleados/');
 
-/*
- for (var i = 0; i < this.usuarios.length; ++i) {
-    if(this.correo == this.usuarios[i].correo && this.contrasena == this.usuarios[i].contrasena ) {
-      console.log('usuario en registro ' + this.usuarios[i].correo);
+personRef2.on('value', Name2 => {
+this.Nombres = Name2.val();
+
+  for (var i = 1; i < Name2.val().length; ++i) {
+  const personRef: firebase.database.Reference = firebase.database().ref('/Empleados/'+i);
+  if (personRef != null){
+    personRef.on('value', Name => {
+      this.Nombres = Name.val();
+      if(Name.val().DNI == this.dni && Name.val().Contraseña == this.contrasena){
         this.titulo="Usuario autentificado";
-        this.usuarios.push(this.usuarios[i]);
-        //this.guardar_storage();
         this.ocultar=true;
         this.boton=false;
         //el encontrado no es necesario
         encontrado=true;
-        break;
+      }
+      });
     }
-  }
-
- if (!encontrado){
-      console.log('el correo introducido no es de ningun usuario registrado');
-      this.correo = "";
-      this.contrasena= "";
-      this.titulo="Autentificate";
-    }*/
+  };
+});
+console.log(encontrado);
+if (!encontrado){
+  console.log('el correo introducido no es de ningun usuario registrado');
+     this.dni = "";
+     this.contrasena= "";
+     this.titulo="Autentificate";
+   }
 
 }
 

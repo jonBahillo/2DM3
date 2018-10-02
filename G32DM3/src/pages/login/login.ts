@@ -50,14 +50,14 @@ localStorage.setItem("usuarios", JSON.stringify( this.usuarios ));
     if(this.correo == this.usuarios[i].correo && this.contrasena == this.usuarios[i].contrasena ) {
       console.log('usuario en registro ' + this.usuarios[i].correo);
         this.titulo="Usuario autentificado";
-        this.usuarios.push(this.usuarios[i]); 
+        this.usuarios.push(this.usuarios[i]);
         //this.guardar_storage();
         this.ocultar=true;
         this.boton=false;
         //el encontrado no es necesario
         encontrado=true;
-        break;     
-    } 
+        break;
+    }
   }
 
  if (!encontrado){
