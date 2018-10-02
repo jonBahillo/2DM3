@@ -19,8 +19,8 @@ import { VerproyectosPage } from '../pages/verproyectos/verproyectos';
 import { GestionarempleadosPage } from '../pages/gestionarempleados/gestionarempleados';
 import { GestionarperfilesPage } from '../pages/gestionarperfiles/gestionarperfiles';
 import { GestionarproyectosPage } from '../pages/gestionarproyectos/gestionarproyectos';
-
-
+import { GestionarofertasPage } from '../pages/gestionarofertas/gestionarofertas';
+import { GestionarventasPage } from '../pages/gestionarventas/gestionarventas';
 //firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
@@ -47,7 +47,9 @@ export const firebaseConfig ={
     GestionclientesPage,
     GestionarempleadosPage,
     GestionarperfilesPage,
-    GestionarproyectosPage
+    GestionarproyectosPage,
+    GestionarofertasPage,
+    GestionarventasPage
   ],
   imports: [
     BrowserModule,
@@ -66,7 +68,10 @@ export const firebaseConfig ={
     GestionclientesPage,
     GestionarempleadosPage,
     GestionarperfilesPage,
-    GestionarproyectosPage
+    GestionarproyectosPage,
+    GestionarofertasPage,
+    GestionarventasPage
+
   ],
   providers: [
     StatusBar,
