@@ -24,6 +24,7 @@ export class LoginPage {
 //  contrasena:string= "";
   titulo="Autentificate";
   adm=0;
+  DNI=0;
   ocultar = false;
   boton = true;
   dni = "";
@@ -59,11 +60,14 @@ this.Nombres = Name2.val();
         this.titulo="Usuario autentificado";
         this.ocultar=true;
         this.boton=false;
+       localStorage.setItem("DNI", Name.val().DNI);
+          localStorage.getItem("DNI");
         if (Name.val().Puesto == "Administrador") {
         localStorage.setItem("adm", 1);
 }
         //el encontrado no es necesario
         encontrado=true;
+     
       }
       });
     }

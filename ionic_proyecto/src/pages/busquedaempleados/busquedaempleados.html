@@ -11,11 +11,19 @@
   <ion-searchbar placeholder="Ej: Don Ramon" showCancelButton color="danger" (ionInput)="filterItems($event)"></ion-searchbar>
 
   
-    <ion-item *ngFor="let item of serDatos.usuarios">
-    	{{item.nombre}}
-     <button ion-button clear item-end>Ver</button>
+
+    <ion-item *ngFor="let Empleados of Nombres | async">
+        {{Empleados.Nombre}}
+        <button ion-button clear item-end>Ver</button>
+            </ion-item>
+           
+
+
+
+
+
+     
     	
-    </ion-item>
 
 </ion-content>
 
