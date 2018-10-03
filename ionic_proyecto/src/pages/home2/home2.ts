@@ -4,6 +4,7 @@ import { VernotificacionesPage } from '../../pages/vernotificaciones/vernotifica
 import { VerperfilPage } from '../../pages/verperfil/verperfil';
 import { VerproyectosPage } from '../../pages/verproyectos/verproyectos';
 import { BusquedaempleadosPage } from '../../pages/busquedaempleados/busquedaempleados';
+import { DatosProvider } from '../../providers/datos/datos';
 
 /**
  * Generated class for the Home2Page page.
@@ -19,7 +20,7 @@ import { BusquedaempleadosPage } from '../../pages/busquedaempleados/busquedaemp
 })
 export class Home2Page {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serDatos: DatosProvider) {
   }
 
 abrirPagina7(){

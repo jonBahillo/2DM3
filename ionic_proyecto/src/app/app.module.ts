@@ -20,11 +20,16 @@ import { VernotificacionesPage } from '../pages/vernotificaciones/vernotificacio
 import { VerperfilPage } from '../pages/verperfil/verperfil';
 import { VerproyectosPage } from '../pages/verproyectos/verproyectos';  
 import { ProyectobuscadoPage } from '../pages/proyectobuscado/proyectobuscado'; 
+
 import { ClienteinfoPage } from '../pages/clienteinfo/clienteinfo';
 import { BorrarperfilPage } from '../pages/borrarperfil/borrarperfil';
 import { AñadirperfilPage } from '../pages/añadirperfil/añadirperfil';
 import { AñadirproyectoPage } from '../pages/añadirproyecto/añadirproyecto'; 
 import { BorrarproyectoPage } from '../pages/borrarproyecto/borrarproyecto';   
+
+
+import { IonicStorageModule } from '@ionic/storage';
+
 //firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
@@ -98,11 +103,11 @@ export const firebaseConfig ={
 
   ],
   providers: [
+    DatosProvider,
     StatusBar,
     SplashScreen,
     AngularFireDatabase,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DatosProvider
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}

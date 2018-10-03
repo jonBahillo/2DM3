@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
@@ -10,8 +9,17 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DatosProvider {
 
-  constructor(public http: HttpClient) {
+	usuarios= [];
+
+  constructor() {
     console.log('Hello DatosProvider Provider');
+
+    this.usuarios = [
+    {nombre:'Mikel'},
+    {nombre:'Gorka'},
+    {nombre:'Jon'},
+    {nombre:'Iñaki'}
+    ];
   }
 
 }
