@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { AñadirproyectoPage } from '../../pages/añadirproyecto/añadirproyecto'; 
+import { BorrarproyectoPage } from '../../pages/borrarproyecto/borrarproyecto'; 
 /**
  * Generated class for the GestionarproyectosPage page.
  *
@@ -21,5 +22,14 @@ export class GestionarproyectosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad GestionarproyectosPage');
   }
+
+
+   borrarproyecto(){
+		this.navCtrl.push(BorrarproyectoPage);
+	}
+
+	 meterproyecto(){
+		this.navCtrl.push(AñadirproyectoPage);
+	}
 
 }

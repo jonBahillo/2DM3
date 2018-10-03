@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { BorrarperfilPage } from '../../pages/borrarperfil/borrarperfil';
+import { AñadirperfilPage } from '../../pages/añadirperfil/añadirperfil'; 
 /**
  * Generated class for the GestionarperfilesPage page.
  *
@@ -21,5 +22,13 @@ export class GestionarperfilesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad GestionarperfilesPage');
   }
+
+   borrarusuario(){
+		this.navCtrl.push(BorrarperfilPage);
+	}
+
+	 meterusuario(){
+		this.navCtrl.push(AñadirperfilPage);
+	}
 
 }

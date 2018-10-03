@@ -14,7 +14,7 @@ import { RegistroPage } from '../pages/registro/registro';
 })
 export class MyApp {
 
-  rootPage:any = Home2Page;
+  rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

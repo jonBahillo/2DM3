@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ClienteinfoPage } from '../../pages/clienteinfo/clienteinfo'
 
-/**
- * Generated class for the GestionclientesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -21,5 +16,18 @@ export class GestionclientesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad GestionclientesPage');
   }
+
+  verinfocliente1(){
+		this.navCtrl.push(ClienteinfoPage);
+	}
+	 verinfocliente2(){
+		this.navCtrl.push(ClienteinfoPage);
+	}
+	 verinfocliente3(){
+		this.navCtrl.push(ClienteinfoPage);
+	}
+	 verinfocliente4(){
+		this.navCtrl.push(ClienteinfoPage);
+	}
 
 }
