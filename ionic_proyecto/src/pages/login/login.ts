@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { Home2Page } from '../home2/home2';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
@@ -22,6 +23,7 @@ export class LoginPage {
 //  correo:string = "";
 //  contrasena:string= "";
   titulo="Autentificate";
+  adm=0;
   ocultar = false;
   boton = true;
   dni = "";
@@ -40,6 +42,7 @@ this.Nombres = afDB.list('/Empleados').valueChanges();
 
 
 acceder(){
+  localStorage.setItem("adm", 0);
   let encontrado:boolean =false;
 
 const personRef2: firebase.database.Reference = firebase.database().ref('/Empleados/');
@@ -56,6 +59,9 @@ this.Nombres = Name2.val();
         this.titulo="Usuario autentificado";
         this.ocultar=true;
         this.boton=false;
+        if (Name.val().Puesto == "Administrador") {
+        localStorage.setItem("adm", 1);
+}
         //el encontrado no es necesario
         encontrado=true;
       }
@@ -75,7 +81,11 @@ if (!encontrado){
 
 ver_productos(){
   console.log('Accediendo');
-  this.navCtrl.push(HomePage);
+  if (localStorage.getItem("adm")==1){
+    this.navCtrl.push(HomePage);
+  }else{
+      this.navCtrl.push(Home2Page);
+  }
 
   }
 
