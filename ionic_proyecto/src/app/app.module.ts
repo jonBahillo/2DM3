@@ -25,6 +25,7 @@ import { ProyectobuscadoPage } from '../pages/proyectobuscado/proyectobuscado';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { DatosProvider } from '../providers/datos/datos';
 
 
 export const firebaseConfig ={
@@ -84,7 +85,8 @@ export const firebaseConfig ={
     StatusBar,
     SplashScreen,
     AngularFireDatabase,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatosProvider
   ]
 })
 export class AppModule {}
