@@ -2,12 +2,17 @@
   <ion-navbar>
     <ion-title>
       Home Empleado
-      
-    
-		  <button ion-item (click)="abrirPagina7()">
-		         <ion-icon  item-end><img src="../../assets/imgs/notificacion.png"></ion-icon>
-		      </button>
-          </ion-title>
+      <button ion-button (click)="abrirPagina7()" id="button">
+
+      <img src="../../assets/imgs/campana.png" id="imga">
+      </button>
+
+      <!--
+      Home Empleado
+
+      <button ion-item (click)="abrirPagina7()"><ion-icon end name="add"></ion-icon>
+        <img src="../../assets/imgs/campana.png"></button>-->
+  </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -20,7 +25,7 @@
 	<hr>
     <ion-list>
 
-  
+
 
       <button ion-item (click)="abrirPagina8()">
         <ion-icon  item-start><img src="../../assets/imgs/perfiles.png"></ion-icon>
@@ -40,7 +45,7 @@
          <button item-end><ion-icon name="add"></ion-icon></button>
       </button>
 
-     
+
 
     </ion-list>
   </ion-card>
