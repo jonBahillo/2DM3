@@ -1,22 +1,34 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DatosProvider } from '../../providers/datos/datos';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
-import * as firebase from 'firebase';
 
 
 @Component({
   templateUrl: 'busquedaempleados.html'
 })
 export class BusquedaempleadosPage {
-  Nombres: Observable<any[]>;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public serDatos: DatosProvider, afDB: AngularFireDatabase) {
-    
-this.Nombres = afDB.list('Empleados').valueChanges();
+  items: Array<string>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serDatos: DatosProvider) {
     
   }
 
+  ngOnInit() {
+    this.setItems();
+  }
 
+  setItems() {
+    this.items = ['Mikel', 'Gorka', 'Iñaki', 'Jon'];
+  }
 
+  filterItems(ev: any) {
+    this.setItems();
+    let val = ev.target.value;
+
+    if (val && val.trim() !== '') {
+      this.items = this.items.filter(function(item) {
+        return item.toLowerCase().includes(val.toLowerCase());
+      });
+    }
+  }
 }
