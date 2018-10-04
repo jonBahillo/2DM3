@@ -13,12 +13,38 @@ img{
 }
 #button{
 	float: right;
-	width: 24px;
-	height: 28px;
+	width: 16px;
+	height: 20px;
 }
 #imga{
-	width: 12px;
-	height: 16px;
+	position:absolute;
+	z-index:1;
+	width:100%;
+	height:100%;
+}
+#contenedor{
+  font-style: italic;
+  background-color: #A9A9A9;
+}
+#shit{
+    background-color: #696969;
+
+}
+#header{
+	background-color: #696969;
+	color: white;
+}
+#button2{
+	background-color: #696969;
+}
+#id{
+	background-color: blue;
+}
+#btn{
+	float: right;
+}
+a{
+	color: white;
 }
 
 }

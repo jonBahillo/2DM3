@@ -8,29 +8,29 @@
 
   <div text-center>
     <ion-card>
-      <ion-card-header>
+      <ion-card-header id="contenedor">
 
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content id="contenedor">
         <h2>{{titulo}}</h2>
       </ion-card-content>
 
-      <ion-list>
+      <ion-list id="shit">
 
-          <ion-item>
-              <ion-label stacked>DNI</ion-label>
+          <ion-item id="contenedor">
+              <ion-label stacked id="a">DNI</ion-label>
               <ion-input type="dni" [(ngModel)]="dni"></ion-input>
           </ion-item>
 
-          <ion-item>
-              <ion-label stacked>Contraseña</ion-label>
+          <ion-item id="contenedor">
+              <ion-label stacked id="a">Contraseña</ion-label>
               <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
           </ion-item>
 
       </ion-list>
 
-            <button ion-button
-                  block [disabled]="boton == false" (click)="acceder(usu)">Acceder
+            <button ion-button block [disabled]="boton == false" (click)="acceder(usu)" >
+              Acceder
             </button>
 
             <button ion-button color="secondary"

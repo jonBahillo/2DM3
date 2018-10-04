@@ -6,46 +6,46 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class=" cards-bg">
+<ion-content class=" cards-bg" id="contenedor">
 
   <ion-card class="cards-list-demo">
-    <ion-card-header>
+    <ion-card-header  id="header">
       Explorador
+      <hr>
     </ion-card-header>
-	<hr>
-    <ion-list>
+    <ion-list id="shit">
 
-  
 
-      <button ion-item>
+
+      <button ion-item id="button2">
         <ion-icon  item-start><img src="../../assets/imgs/icono_empleados.svg"></ion-icon>
-        Gestion Empleados
-         <button item-end><ion-icon name="add" (click)="abrirPagina2()"></ion-icon></button>
+        <a>Gestion Empleados</a>
+         <button ion-button id="btn"><ion-icon name="add" (click)="abrirPagina2()"></ion-icon></button>
       </button>
 
-      <button ion-item>
+      <button ion-item id="button2">
         <ion-icon name='cart' item-start></ion-icon>
-        
-        Gestion	Ventas
-         <button item-end><ion-icon name="add" (click)="abrirPagina3()"></ion-icon></button>
+
+        <a>Gestion	Ventas</a>
+         <button ion-button id="btn"><ion-icon name="add" (click)="abrirPagina3()"></ion-icon></button>
       </button>
 
-      <button ion-item>
+      <button ion-item id="button2">
         <ion-icon  item-start><img src="../../assets/imgs/icono_proyecto.png"></ion-icon>
-        Gestion Proyectos
-         <button item-end><ion-icon name="add" (click)="abrirPagina4()"></ion-icon></button>
+        <a>Gestion Proyectos</a>
+         <button ion-button id="btn"><ion-icon name="add" (click)="abrirPagina4()"></ion-icon></button>
       </button>
 
-      <button ion-item>
+      <button ion-item id="button2">
         <ion-icon  item-start><img src="../../assets/imgs/icono_clientes.png"></ion-icon>
-        Gestion Perfiles
-         <button item-end><ion-icon name="add" (click)="abrirPagina5()"></ion-icon></button>
+        <a>Gestion Perfiles</a>
+         <button ion-button id="btn"><ion-icon name="add" (click)="abrirPagina5()"></ion-icon></button>
       </button>
 
-      <button ion-item>
+      <button ion-item id="button2">
         <ion-icon  item-start><img src="../../assets/imgs/empresa.png"></ion-icon>
-        Gestion Clientes
-         <button item-end><ion-icon name="add" (click)="abrirPagina6()"></ion-icon></button>
+        <a>Gestion Clientes</a>
+         <button ion-button id="btn"><ion-icon name="add" (click)="abrirPagina6()"></ion-icon></button>
       </button>
 
     </ion-list>

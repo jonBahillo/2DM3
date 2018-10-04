@@ -16,33 +16,33 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class=" cards-bg">
+<ion-content class=" cards-bg" id="contenedor">
 
   <ion-card class="cards-list-demo">
-    <ion-card-header>
+    <ion-card-header id="header">
       Explorador
+      <hr>
     </ion-card-header>
-	<hr>
-    <ion-list>
+    <ion-list id="shit">
 
 
 
-      <button ion-item (click)="abrirPagina8()">
+      <button ion-item (click)="abrirPagina8()" id="button2">
         <ion-icon  item-start><img src="../../assets/imgs/perfiles.png"></ion-icon>
-        Ver Perfil
-       <button item-end><ion-icon name="add"></ion-icon></button>
+        <a>Ver Perfil</a>
+       <button ion-button id="btn"><ion-icon name="add" id="end"></ion-icon></button>
       </button>
 
-      <button ion-item (click)="abrirPagina9()">
+      <button ion-item (click)="abrirPagina9()" id="button2">
         <ion-icon  item-start><img src="../../assets/imgs/icono_proyecto.png"></ion-icon>
-         Ver Proyectos
-         <button item-end><ion-icon name="add"></ion-icon></button>
+        <a> Ver Proyectos</a>
+         <button ion-button id="btn"><ion-icon name="add" id="end"></ion-icon></button>
       </button>
 
-      <button ion-item (click)="abrirPagina10()">
+      <button ion-item (click)="abrirPagina10()" id="button2">
         <ion-icon  item-start><img src="../../assets/imgs/lupa.png"></ion-icon>
-        Busqueda Empleados
-         <button item-end><ion-icon name="add"></ion-icon></button>
+        <a>Busqueda Empleados</a>
+         <button ion-button id="btn"><ion-icon name="add" id="end"></ion-icon></button>
       </button>
 
 
