@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase';
 /**
  * Generated class for the EditarperfilPage page.
  *
@@ -14,12 +17,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'editarperfil.html',
 })
 export class EditarperfilPage {
+	Clientes2: Observable<any[]>;
+	Cliente;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,afDB: AngularFireDatabase) {
+ 	
+  	this.Cliente=navParams.data.Clientes;
+      console.log(this.Cliente);
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EditarperfilPage');
-  }
+ 
 
 }

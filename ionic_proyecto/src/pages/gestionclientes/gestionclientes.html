@@ -1,43 +1,28 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Gestion Clientes</ion-title>
+    <ion-title>Gestion clientes</ion-title>
+
   </ion-navbar>
 </ion-header>
 
 
 <ion-content>
-  <ion-list>
-
-    <ion-item>
-      
-      <h2 ion-text color="dark">Peter Parker Garcia</h2>
-      
-      <button ion-button clear item-end (click)="verinfocliente1()">Ver</button>
-    </ion-item>
-
-    <ion-item>
-      
-      <h2 ion-text color="dark" >Charles Darwin Darwin</h2>
-     
-      <button ion-button clear item-end (click)="verinfocliente2()">Ver</button>
-    </ion-item>
-
-    <ion-item>
-     
-      <h2 ion-text color="dark" >Wolfgang Amadeus Mozart</h2>
-     
-      <button ion-button clear item-end (click)="verinfocliente3()">Ver</button>
-    </ion-item>
-
-    <ion-item>
-     
-      <h2 ion-text color="dark" >Robert Nesta Marley</h2>
-     
-      <button ion-button clear item-end (click)="verinfocliente4()">Ver</button>
-    </ion-item>
+  
+<ion-item *ngFor="let Clientes of Clientes | async">
+        {{Clientes.Nombre}}
+        {{Clientes.Apellido1}}
+        {{Clientes.Apellido2}}
+        <button ion-button clear item-end (click)="verinfocliente(Clientes)">Ver</button>
+            </ion-item>
 
 
-  </ion-list>
+    
+
+
+
 </ion-content>
 
 
+ <!--<button ion-button clear item-end (click)="verinfocliente(Clientes)">Ver</button>
+
+  -->

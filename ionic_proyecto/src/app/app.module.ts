@@ -26,7 +26,7 @@ import { BorrarperfilPage } from '../pages/borrarperfil/borrarperfil';
 import { AñadirperfilPage } from '../pages/añadirperfil/añadirperfil';
 import { AñadirproyectoPage } from '../pages/añadirproyecto/añadirproyecto'; 
 import { BorrarproyectoPage } from '../pages/borrarproyecto/borrarproyecto';   
-
+import { EditarperfilPage } from '../pages/editarperfil/editarperfil';   
 
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -68,7 +68,8 @@ export const firebaseConfig ={
     BorrarperfilPage,
     AñadirperfilPage,
     AñadirproyectoPage,
-    BorrarproyectoPage
+    BorrarproyectoPage,
+    EditarperfilPage
 
   ],
   imports: [
@@ -99,7 +100,9 @@ export const firebaseConfig ={
     BorrarperfilPage,
     AñadirperfilPage,
     AñadirproyectoPage,
-    BorrarproyectoPage
+    BorrarproyectoPage,
+    EditarperfilPage
+    
 
   ],
   providers: [

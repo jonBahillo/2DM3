@@ -30,10 +30,11 @@ export class LoginPage {
   i = 1;
   items:any []=[];
   Nombres: Observable<any[]>;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
 
 
-this.Nombres = afDB.list('/Empleados').valueChanges();
+this.Nombres = afDB.list('Empleados').valueChanges();
 
 
   }
