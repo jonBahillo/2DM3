@@ -41,7 +41,7 @@ this.Nombres = afDB.list('/Empleados').valueChanges();
 
 
 acceder(){
-  localStorage.setItem("adm", 0);
+ 
   let encontrado:boolean =false;
 
 const personRef2: firebase.database.Reference = firebase.database().ref('/Empleados/');
@@ -59,8 +59,9 @@ this.Nombres = Name2.val();
         this.ocultar=true;
         this.boton=false;
         if (Name.val().Puesto == "Administrador") {
-        localStorage.setItem("adm", 1);
+       localStorage.setItem("adm", 1);
 }
+
         //el encontrado no es necesario
         encontrado=true;
       }

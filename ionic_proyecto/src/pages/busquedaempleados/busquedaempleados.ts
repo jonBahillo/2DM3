@@ -1,34 +1,59 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DatosProvider } from '../../providers/datos/datos';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase';
+import { VerperfilPage } from '../../pages/verperfil/verperfil';
+
 
 
 @Component({
   templateUrl: 'busquedaempleados.html'
 })
 export class BusquedaempleadosPage {
-  items: Array<string>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public serDatos: DatosProvider) {
+Empleados: Observable<any[]>;
+
+items;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
+    this.Empleados = afDB.list('Empleados').valueChanges();
+    this.initializeItems();
     
   }
 
-  ngOnInit() {
-    this.setItems();
-  }
 
-  setItems() {
-    this.items = ['Mikel', 'Gorka', 'Iñaki', 'Jon'];
-  }
 
-  filterItems(ev: any) {
-    this.setItems();
-    let val = ev.target.value;
+  initializeItems() {
+ this.items = [
+      'Jon Bahillo Renero',
+      'Bogota',
+      'Buenos Aires',
+      'Cairo'
+    ];
+}
+  
 
-    if (val && val.trim() !== '') {
-      this.items = this.items.filter(function(item) {
-        return item.toLowerCase().includes(val.toLowerCase());
-      });
+
+
+getItems(ev) {
+    // Reset items back to all of the items
+     this.initializeItems();
+
+    // set val to the value of the searchbar
+    var val = ev.target.value;
+
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
     }
   }
+
+
+verEmpleado(Empleados){
+  this.navCtrl.push(VerperfilPage, { Empleados : Empleados });
+}
+
 }
