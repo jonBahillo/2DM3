@@ -14,7 +14,7 @@ import { EditarperfilPage } from '../../pages/editarperfil/editarperfil';
 export class ClienteinfoPage {
 	Clientes2: Observable<any[]>;
 	Cliente;
-
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
 
