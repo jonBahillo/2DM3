@@ -8,18 +8,20 @@
 
 <ion-content>
   
-<ion-item *ngFor="let Clientes of Clientes | async">
+<ion-item *ngFor="let Clientes of Clientes2 | async; let i = index">
         {{Clientes.Nombre}}
         {{Clientes.Apellido1}}
         {{Clientes.Apellido2}}
         <button ion-button clear item-end (click)="verinfocliente(Clientes)">Ver</button>
+        <button ion-button clear item-end (click)="borrarcliente(i)"><ion-icon name="trash"></ion-icon></button>
             </ion-item>
 
 
   <ion-item>
          <p>Añadir Usuario</p>
       
-      <button ion-button clear item-end (click)="btnAddClicked(Clientes)"><ion-icon name="add"></ion-icon>
+      <button ion-button clear item-end (click)="anadircliente(Clientes)">
+      	<ion-icon name="add"></ion-icon>
     </button>
      </ion-item>  
 

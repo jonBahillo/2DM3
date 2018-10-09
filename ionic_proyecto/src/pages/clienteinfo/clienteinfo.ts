@@ -12,7 +12,7 @@ import { EditarperfilPage } from '../../pages/editarperfil/editarperfil';
   templateUrl: 'clienteinfo.html',
 })
 export class ClienteinfoPage {
-	Clientes2: Observable<any[]>;
+	//Clientes2: Observable<any[]>;
 	Cliente;
   
 

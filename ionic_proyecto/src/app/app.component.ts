@@ -9,10 +9,13 @@ import { Home2Page } from '../pages/home2/home2';
 import { LoginPage } from '../pages/login/login';
 import { RegistroPage } from '../pages/registro/registro';
 
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+
+
 
   rootPage:any = LoginPage;
 
@@ -23,5 +26,7 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+
+  
   }
 }

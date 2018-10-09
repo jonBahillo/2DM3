@@ -61,6 +61,8 @@ this.Nombres = Name2.val();
         this.boton=false;
         if (Name.val().Puesto == "Administrador") {
        localStorage.setItem("adm", 1);
+}else{
+  localStorage.setItem("adm", 0);
 }
 
         //el encontrado no es necesario
