@@ -10,6 +10,7 @@ import { Injectable } from '@angular/core';
 export class DatosProvider {
 
 	usuarios= [];
+   arreglo:any []=[];
 
   constructor() {
     console.log('Hello DatosProvider Provider');

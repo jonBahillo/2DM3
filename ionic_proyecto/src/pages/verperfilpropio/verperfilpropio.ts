@@ -4,9 +4,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
 import { DatosProvider } from '../../providers/datos/datos';
-
 /**
- * Generated class for the VerperfilPage page.
+ * Generated class for the VerperfilpropioPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -14,21 +13,16 @@ import { DatosProvider } from '../../providers/datos/datos';
 
 @IonicPage()
 @Component({
-  selector: 'page-verperfil',
-  templateUrl: 'verperfil.html',
+  selector: 'page-verperfilpropio',
+  templateUrl: 'verperfilpropio.html',
 })
-export class VerperfilPage {
+export class VerperfilpropioPage {
 
-Empleado:Observable<any[]>;
-item;
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-  	afDB: AngularFireDatabase,
-  	 public datos: DatosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public datos: DatosProvider, afDB: AngularFireDatabase) {
+  }
 
-  	
-  	  this.Empleado=navParams.data.Empleados;
-  	  console.log(this.Empleado);
-
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad VerperfilpropioPage');
   }
 
 }

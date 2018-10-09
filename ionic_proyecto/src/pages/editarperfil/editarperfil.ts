@@ -19,11 +19,40 @@ import * as firebase from 'firebase';
 export class EditarperfilPage {
 	Clientes2: Observable<any[]>;
 	Cliente;
+	arrData = [];
+  /*creamos una variable, que es la utilizada por firebase para poder identificar los registros. 
+  Ponemos el simbolo de pregunta para poder decir que este campo con es obligatorio introducirlo. 
+  Firebase lo identifica. */
+  $key?:string;
+  Nombre: string;
+  Apellido1: string;
+  Apellido2: string;
+  Direccion: string;
+  CP: number;
+  Date_mante: date;
+  Nombre_empresa: string;
+  Pais: string;
+  Provincia: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,afDB: AngularFireDatabase) {
+  usuarios:any = [];
+  llave = [];
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
  	
+  	 this.afDB.list("myUsers").valueChanges().subscribe(_data =>{
+      this.arrData = _data;
+      console.log(this.arrData);
+  });
+    this.afDB.list("myUsers").snapshotChanges().subscribe(_data =>{
+      this.llave = _data;
+      console.log(this.llave);
+
+    });
   	this.Cliente=navParams.data.Clientes;
       console.log(this.Cliente);
+
+
 
   }
 

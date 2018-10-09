@@ -36,6 +36,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DatosProvider } from '../providers/datos/datos';
+import { VerperfilpropioPage } from '../pages/verperfilpropio/verperfilpropio';
 
 
 export const firebaseConfig ={
@@ -71,7 +72,9 @@ export const firebaseConfig ={
     AñadirproyectoPage,
     BorrarproyectoPage,
     EditarperfilPage,
-    MeterclientePage
+    MeterclientePage,
+    VerperfilpropioPage
+
 
   ],
   imports: [
@@ -104,9 +107,8 @@ export const firebaseConfig ={
     AñadirproyectoPage,
     BorrarproyectoPage,
     EditarperfilPage,
-    MeterclientePage
-    
-
+    MeterclientePage,
+    VerperfilpropioPage
   ],
   providers: [
     DatosProvider,

@@ -5,6 +5,7 @@ import { Home2Page } from '../home2/home2';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
+import { DatosProvider } from '../../providers/datos/datos';
 /**
  * Generated class for the LoginPage page.
  *
@@ -28,10 +29,13 @@ export class LoginPage {
   dni = "";
   contrasena="";
   i = 1;
+ 
   items:any []=[];
   Nombres: Observable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+              public afDB: AngularFireDatabase,
+              public datos: DatosProvider) {
 
 
 this.Nombres = afDB.list('Empleados').valueChanges();
@@ -57,8 +61,23 @@ this.Nombres = Name2.val();
       this.Nombres = Name.val();
       if(Name.val().DNI == this.dni && Name.val().Contraseña == this.contrasena){
         this.titulo="Usuario autentificado";
+        this.datos.arreglo.push(this.Nombres);
+        console.log(this.datos.arreglo);
         this.ocultar=true;
         this.boton=false;
+
+
+
+       /* localStorage.setItem("Apellido1", Name.val().Apellido1);
+        localStorage.setItem("Apellido2", Name.val().Apellido2);
+        localStorage.setItem("CP", Name.val().CP);
+        localStorage.setItem("DNI", Name.val().DNI);
+        localStorage.setItem("Direccion", Name.val().Direccion);
+        localStorage.setItem("Nombre", Name.val().Nombre);
+        localStorage.setItem("Pais", Name.val().Pais);
+        localStorage.setItem("Provincia", Name.val().Provincia);
+        localStorage.setItem("Puesto", Name.val().Puesto);*/
+
         if (Name.val().Puesto == "Administrador") {
        localStorage.setItem("adm", 1);
 }else{
@@ -82,12 +101,12 @@ if (!encontrado){
 
 }
 
-ver_productos(){
+ver_productos(item){
   console.log('Accediendo');
   if (localStorage.getItem("adm")==1){
     this.navCtrl.push(HomePage);
   }else{
-      this.navCtrl.push(Home2Page);
+      this.navCtrl.push(Home2Page, { arreglo:item });
   }
 
   }

@@ -5,6 +5,10 @@ import { VerperfilPage } from '../../pages/verperfil/verperfil';
 import { VerproyectosPage } from '../../pages/verproyectos/verproyectos';
 import { BusquedaempleadosPage } from '../../pages/busquedaempleados/busquedaempleados';
 import { DatosProvider } from '../../providers/datos/datos';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase';
+import { VerperfilpropioPage } from '../../pages/verperfilpropio/verperfilpropio';
 
 /**
  * Generated class for the Home2Page page.
@@ -20,15 +24,27 @@ import { DatosProvider } from '../../providers/datos/datos';
 })
 export class Home2Page {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public serDatos: DatosProvider) {
+  Empleados: Observable<any[]>;
+  Dato;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
+
+
+  this.Empleados = afDB.list('Empleados').valueChanges();
+  this.Dato=navParams.data.arreglo;
+  console.log(this.Empleados);
+  console.log(this.Dato);
+
   }
 
 abrirPagina7(){
 		this.navCtrl.push(VernotificacionesPage);
 	}
-	abrirPagina8(){
-		this.navCtrl.push(VerperfilPage);
+	verEmpleado(Empleados){
+  		this.navCtrl.push(VerperfilpropioPage, {Empleados : Empleados}) ;
 	}
+
 	abrirPagina9(){
 		this.navCtrl.push(VerproyectosPage);
 	}
