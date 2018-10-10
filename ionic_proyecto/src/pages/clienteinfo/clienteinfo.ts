@@ -15,10 +15,13 @@ export class ClienteinfoPage {
 	//Clientes2: Observable<any[]>;
 	Cliente;
   
+  item;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public afDB: AngularFireDatabase) {
 
     //this.Cliente = this.navParams(Cliente);
+    this.item=navParams.data.i;
+    console.log(this.i);
       this.Cliente=navParams.data.Clientes;
       console.log(this.Cliente);
       //this.Clientes = afDB.list('/Clientes').valueChanges();
@@ -28,12 +31,16 @@ export class ClienteinfoPage {
 
   }
 
-editarcliente(Clientes){
+editarcliente(Cliente, i){
 
-  this.navCtrl.push(EditarperfilPage,{Clientes : Clientes});
+  this.navCtrl.push(EditarperfilPage, {Cliente:Cliente}, {i:i});
+      console.log(this.i);
 }
      
 
+
 }
+
+
 
 

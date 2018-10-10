@@ -1,6 +1,8 @@
 <ion-header>
 
   <ion-navbar>
+<ion-item *ngFor="let Cliente of Clientes | async"></ion-item>
+
         <ion-title>{{Cliente.Nombre}}&nbsp; {{Cliente.Apellido1}}&nbsp; {{Cliente.Apellido2}}</ion-title>
 
   </ion-navbar>

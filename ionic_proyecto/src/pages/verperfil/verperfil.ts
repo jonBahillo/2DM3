@@ -22,7 +22,7 @@ export class VerperfilPage {
 Empleado:Observable<any[]>;
 item;
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  	afDB: AngularFireDatabase,
+  	public afDB: AngularFireDatabase,
   	 public datos: DatosProvider) {
 
   	

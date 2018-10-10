@@ -53,7 +53,7 @@ export class MeterclientePage {
 
       
        Cp: this.Cp,
-       Date_mate: this.Date_mate,
+       Date_mante: this.Date_mante,
        Direccion: this.Direccion,
        Nombre: this.Nombre,
        Nombre_Empresa: this.Nombre_Empresa,
@@ -66,13 +66,13 @@ export class MeterclientePage {
     this.Clientes.Apellido1 ="";
     this.Clientes.Apellido2="";
     this.Clientes.Cp="";
-    this.Clientes.Date_mate="";
+    this.Clientes.Date_mante="";
     this.Clientes.Direccion="";
     this.Clientes.Nombre="";
     this.Clientes.Nombre_Empresa="";
     this.Clientes.Pais="";
     this.Clientes.Provincia="";
-this.navCtrl.push(GestionclientesPage);
+    this.navCtrl.push(GestionclientesPage);
 
   }
 	

@@ -1,4 +1,3 @@
-import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ClienteinfoPage } from '../../pages/clienteinfo/clienteinfo'
 import { MeterclientePage } from '../../pages/metercliente/metercliente';
@@ -38,8 +37,8 @@ export class GestionclientesPage {
 
 
 
- verinfocliente(Clientes){
-		        this.navCtrl.push(ClienteinfoPage, { Clientes : Clientes });
+ verinfocliente(Clientes, i){
+		        this.navCtrl.push(ClienteinfoPage, { Clientes : Clientes }, { i:i });
 
 	}
 
@@ -64,6 +63,7 @@ export class GestionclientesPage {
      alert("Cliente borrado");
    
 }
+
 
 
 }
