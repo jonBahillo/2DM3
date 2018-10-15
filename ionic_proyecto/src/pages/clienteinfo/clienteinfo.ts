@@ -15,8 +15,13 @@ import { Component, ViewChild } from '@angular/core';
   templateUrl: 'clienteinfo.html',
 })
 export class ClienteinfoPage {
+
 	//Clientes2: Observable<any[]>;
 	Cliente2;
+
+	/********Creamos array cliente*************/
+	Cliente;
+
   
   i2;
 
@@ -29,6 +34,7 @@ export class ClienteinfoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afDB: AngularFireDatabase) {
 
+
     //this.Cliente = this.navParams(Cliente);
     this.i2=navParams.data.i;
     console.log(navParams.data.i);
@@ -37,6 +43,12 @@ export class ClienteinfoPage {
 
       console.log(this.Nombre);
       //this.Clientes = afDB.list('/Clientes').valueChanges();
+
+    /******Cogemos los datos de cada cliente y los metemos en el array********/
+      this.Cliente=navParams.data.Clientes;
+      console.log(this.Cliente);
+    
+
       
 this.Cliente = afDB.list('Clientes').valueChanges();
 
@@ -50,6 +62,7 @@ this.Cliente = afDB.list('Clientes').valueChanges();
 
 
   }
+  /*******FUNCIONES BOTONES*******/
 
   anadircliente(Clientes){
     

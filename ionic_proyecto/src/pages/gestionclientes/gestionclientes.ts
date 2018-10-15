@@ -4,8 +4,7 @@ import { MeterclientePage } from '../../pages/metercliente/metercliente';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
-import { List } from 'ionic-angular';
-import { Component, ViewChild } from '@angular/core';
+import { LoginPage } from '../../pages/login/login';
    
 
 
@@ -23,9 +22,13 @@ export class GestionclientesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
   				public afDB: AngularFireDatabase) {
 
-	this.Clientes2 = afDB.list('Clientes').valueChanges();
+	this.Clientes2 = afDB.list('Clientes').valueChanges();/****Cargamos datos del firebase de la tabla clientes******/
 
+<<<<<<< HEAD
 	this.afDB.list('Clientes').snapshotChanges().subscribe(_data =>{
+=======
+	this.afDB.list("Clientes").snapshotChanges().subscribe(_data =>{/*****Cogemos la key de cada campo de la tabla clientes ****/
+>>>>>>> pruebas
       this.llave = _data;
       console.log(this.llave);
 
@@ -35,7 +38,7 @@ export class GestionclientesPage {
 
   }
 
-
+/************FUNCIONES BOTONES Y pasar datos a  paginaa*******************/
 
  verinfocliente(Clientes, i){
 		        this.navCtrl.push(ClienteinfoPage, { Clientes:Clientes  , i } );
@@ -54,17 +57,19 @@ export class GestionclientesPage {
 
 
 	borrarcliente(i){
- 	console.log(i);
+ 	
   
-      //tenemos que pasar un parametro de eliminacion.
-      //this.afDB.list("myUsers").remove(usuarios[i]);
       this.afDB.list("Clientes").remove(this.llave[i].key);
-      //console.log(this.Clientes2[i].key);
-      //this.afDB.list("/myUsers/").remove(this.arrData[usuarios].$key);
-      //this.afDB.collection('/myUsers/${ this.arrData[usuarios].$key }').remove();
+      
      alert("Cliente borrado");
    
 }
+
+  salir2(){
+    this.navCtrl.push(LoginPage);
+    location.reload();/*REFRESCA LA PAGINA*/
+
+  }
 
 
 

@@ -1,15 +1,10 @@
-import { Component } from '@angular/core';
+ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
 import { GestionclientesPage } from '../../pages/gestionclientes/gestionclientes';
-/**
- * Generated class for the MeterclientePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -17,6 +12,8 @@ import { GestionclientesPage } from '../../pages/gestionclientes/gestionclientes
   templateUrl: 'metercliente.html',
 })
 export class MeterclientePage {
+  /********************/
+  /**Declaramos todos los campos de la tabla cliente y creamos el array cliente**/
   arrData = [];
   $key?:string;
   Apellido1: string;
@@ -32,17 +29,23 @@ export class MeterclientePage {
   
 
 
-  myInputNumber: number;
+ 
   Clientes:any = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
   						public afDB: AngularFireDatabase) {
 
+<<<<<<< HEAD
   	this.Empleados = afDB.list('Clientes').valueChanges();
 this.Clientes=navParams.data.Clientes;
+=======
+
+
+>>>>>>> pruebas
   
 
   }
+  /**********FUNCION AÑADIR cliente*******************/
 
   btnAddClicked(Clientes){
 
@@ -50,10 +53,12 @@ this.Clientes=navParams.data.Clientes;
     this.afDB.list("Clientes").push(/*this.usuarios*/
       {Apellido1: this.Apellido1,
        Apellido2: this.Apellido2,
-
-      
        Cp: this.Cp,
+<<<<<<< HEAD
        Date_mante: this.Date_mante,
+=======
+       Date_mate: this.Date_mante,
+>>>>>>> pruebas
        Direccion: this.Direccion,
        Nombre: this.Nombre,
        Nombre_Empresa: this.Nombre_Empresa,
@@ -72,7 +77,11 @@ this.Clientes=navParams.data.Clientes;
     this.Clientes.Nombre_Empresa="";
     this.Clientes.Pais="";
     this.Clientes.Provincia="";
+<<<<<<< HEAD
     this.navCtrl.push(GestionclientesPage);
+=======
+	this.navCtrl.push(GestionclientesPage);
+>>>>>>> pruebas
 
   }
 	

@@ -27,7 +27,9 @@ import { AñadirperfilPage } from '../pages/añadirperfil/añadirperfil';
 import { AñadirproyectoPage } from '../pages/añadirproyecto/añadirproyecto'; 
 import { BorrarproyectoPage } from '../pages/borrarproyecto/borrarproyecto';   
 import { EditarperfilPage } from '../pages/editarperfil/editarperfil';
-import { MeterclientePage } from '../pages/metercliente/metercliente';    
+import { MeterclientePage } from '../pages/metercliente/metercliente';
+import { EmpleadoinfoPage } from '../pages/empleadoinfo/empleadoinfo';
+import { ProyectoinfoPage } from '../pages/proyectoinfo/proyectoinfo';        
 
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -75,9 +77,9 @@ export const firebaseConfig ={
     EditarperfilPage,
     MeterclientePage,
     VerperfilpropioPage,
-    FaltafuncionalidadPage
-
-
+    FaltafuncionalidadPage,
+    EmpleadoinfoPage,
+    ProyectoinfoPage
   ],
   imports: [
     BrowserModule,
@@ -111,7 +113,9 @@ export const firebaseConfig ={
     EditarperfilPage,
     MeterclientePage,
     VerperfilpropioPage,
-    FaltafuncionalidadPage
+    FaltafuncionalidadPage,
+    EmpleadoinfoPage,
+    ProyectoinfoPage  
   ],
   providers: [
     DatosProvider,

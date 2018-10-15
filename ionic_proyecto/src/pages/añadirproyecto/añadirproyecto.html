@@ -11,35 +11,31 @@
 
 	<ion-list>
 
-          <ion-item>
-              <ion-label stacked color="primary">Fecha mantenimiento</ion-label>
 
-              <ion-input class="fuente" type="text" [(ngModel)]="fecha_mantenimiento"></ion-input>
+          <ion-item id="contenedor">
+              <ion-label stacked id="a">Nombre</ion-label>
+              <ion-input type="text"  [(ngModel)]="NombreP"></ion-input>
           </ion-item>
 
-          <ion-item>
-              <ion-label stacked color="primary">IdCliente</ion-label>
-
-              <ion-input class="fuente" type="text" [(ngModel)]="IdCliente"></ion-input>
+          <ion-item id="contenedor">
+              <ion-label stacked id="a">Descripcion</ion-label>
+              <ion-input type="dni" [(ngModel)]="Desc"></ion-input>
           </ion-item>
 
-          <ion-item>
-              <ion-label stacked color="primary">Estado proyecto</ion-label>
-
-              <ion-input class="fuente" type="text" [(ngModel)]="estado_proyecto"></ion-input>
+          <ion-item id="contenedor">
+              <ion-label stacked id="a">Fecha Mantenimiento</ion-label>
+              <ion-input type="text" [(ngModel)]="Date_mante"></ion-input>
           </ion-item>
 
-          <ion-item>
-              <ion-label stacked color="primary">Descripcion</ion-label>
-
-              <ion-input class="fuente" type="text" [(ngModel)]="descripcion"></ion-input>
+          <ion-item id="contenedor">
+              <ion-label stacked id="a">Status</ion-label>
+              <ion-input type="text" [(ngModel)]="Status"></ion-input>
           </ion-item>
 
          
+
       </ion-list>
 
-<button ion-button
-                  block [disabled]="boton == false" (click)="registrar(usu)">Añadir
-            </button>
+      <button ion-button outline item-end icon-start (click)="btnAddClicked3(Proyecto)" ><ion-icon name="create"></ion-icon>Añadir Cliente</button>
 
 </ion-content>

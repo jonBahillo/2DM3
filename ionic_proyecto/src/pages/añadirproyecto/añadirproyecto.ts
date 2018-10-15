@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase';
+import { GestionarproyectosPage } from '../../pages/gestionarproyectos/gestionarproyectos';
 /**
  * Generated class for the AñadirproyectoPage page.
  *
@@ -14,12 +17,48 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'añadirproyecto.html',
 })
 export class AñadirproyectoPage {
+/*********Declaramos todos los campos de la tabla proyecto y el array proyecto****************/
+  arrData = [];
+  $key?:string;
+  NombreP: string;
+  Date_mante: any;
+  Desc: string;
+  Status: string;
+  llave = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+	Proyecto:any = [];
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  						public afDB: AngularFireDatabase) {
+
+
+
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AñadirproyectoPage');
+/***********Funcion boton de añadir proyecto***************************/
+btnAddClicked3(Proyecto){
+
+    
+    this.afDB.list("Proyecto").push(/*this.usuarios*/
+      {NombreP: this.NombreP,
+       Date_mante: this.Date_mante,
+       Desc: this.Desc,
+       Status: this.Status
+       
+      });
+    
+
+
+    this.Proyecto.NombreP ="";
+    this.Proyecto.Date_mante="";
+    this.Proyecto.Desc="";
+    this.Proyecto.Status="";
+    
+	this.navCtrl.push(GestionarproyectosPage);
+
   }
 
 }
