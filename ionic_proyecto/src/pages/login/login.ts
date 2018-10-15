@@ -19,7 +19,10 @@ import { DatosProvider } from '../../providers/datos/datos';
 })
 export class LoginPage {
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> pruebas
 //  usuarios:any;
 //  correo:string = "";
 //  password:string= "";
@@ -55,11 +58,18 @@ acceder(){
 const personRef2: firebase.database.Reference = firebase.database().ref('/Empleados/');
 
 
+<<<<<<< HEAD
 
 personRef2.on('value', Name2 => {
 this.Nombres = Name2.val();
 
 console.log(this.Nombres);
+=======
+personRef2.on('value', Name2 => {
+this.Nombres = Name2.val();
+
+
+>>>>>>> pruebas
 
 
 //  console.log(Object.keys(this.Nombres).length);
@@ -67,25 +77,35 @@ console.log(this.Nombres);
 for (var i = 0; i < Object.keys(this.Nombres).length ; ++i) {
 
  this.id = Object.keys(this.Nombres)[i];
+<<<<<<< HEAD
 
 console.log(this.Nombres[this.id].DNI);
+=======
+//console.log(this.Nombres[this.id]);
+>>>>>>> pruebas
 
 
 if(this.Nombres[this.id].DNI == dni2 && this.Nombres[this.id].password == password2){
   //this.titulo="Usuario autentificado";
   //this.ocultar=true;
   //this.boton=false;
+<<<<<<< HEAD
   //console.log(this.Nombre[i].DNI);
   this.datos.arreglo=[];
   this.datos.arreglo.push(this.Nombres[this.id]);
 
+=======
+>>>>>>> pruebas
   if (this.Nombres[this.id].Puesto == "Administrador") {
 //   localStorage.setItem("adm", '1');
 this.navCtrl.push(HomePage);
 }else{
 //  localStorage.setItem("adm", '0');
 this.navCtrl.push(Home2Page);
+<<<<<<< HEAD
 
+=======
+>>>>>>> pruebas
 }
 }
 
