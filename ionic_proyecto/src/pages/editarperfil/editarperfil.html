@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-        <ion-title>Editar a:&nbsp;{{Cliente.Nombre}}&nbsp; {{Cliente.Apellido1}}&nbsp; {{Cliente.Apellido2}}</ion-title>
+        <ion-title>Editar a:&nbsp;{{Clientes2.Nombre}}&nbsp; {{Clientes2.Apellido1}}&nbsp; {{Clientes2.Apellido2}}</ion-title>
 
   </ion-navbar>
 
@@ -10,104 +10,62 @@
 
 <ion-content padding>
 
-<!--
+
 	<ion-list>
 
-          
+          <ion-item *ngFor="let Cliente of Cliente | async; let i = index">
+            
+          </ion-item>
 
-          <ion-item id="contenedor">
+         <ion-item id="contenedor">
               <ion-label  id="a">Apellido2</ion-label>
-              <ion-input type="text" [(ngModel)]="Apellido2"></ion-input>
+              <ion-input type="text" [(ngModel)]="Apellido2" value="{{Clientes2.Apellido2}}"></ion-input>
           </ion-item>
 
           <ion-item id="contenedor">
               <ion-label  id="a">Apellido1</ion-label>
-              <ion-input type="dni" [(ngModel)]="Apellido1"></ion-input>
+              <ion-input type="dni" [(ngModel)]="Apellido1" value="{{Clientes2.Apellido1}}"></ion-input>
           </ion-item>
 
           <ion-item id="contenedor">
               <ion-label  id="a">Nombre</ion-label>
-              <ion-input type="text" [(ngModel)]="Nombre"></ion-input>
+              <ion-input type="text" [(ngModel)]="Nombre" value="{{Clientes2.Nombre}}"></ion-input>
           </ion-item>
 
           <ion-item id="contenedor">
               <ion-label  id="a">Codigo Postal</ion-label>
-              <ion-input type="text" [(ngModel)]="Cp"></ion-input>
+              <ion-input type="text" [(ngModel)]="Cp" value="{{Clientes2.Cp}}"></ion-input>
           </ion-item>
 
           <ion-item id="contenedor">
               <ion-label  id="a">Fecha Mantenimiento</ion-label>
-              <ion-input type="text" [(ngModel)]="Date_mate"></ion-input>
+              <ion-input type="text" [(ngModel)]="Date_mante" value="{{Clientes2.Date_mante}}"></ion-input>
           </ion-item>
 
           <ion-item id="contenedor">
               <ion-label  id="a">Direccion</ion-label>
-              <ion-input type="text" [(ngModel)]="Direccion"></ion-input>
+              <ion-input type="text" [(ngModel)]="Direccion" value="{{Clientes2.Direccion}}"></ion-input>
           </ion-item>
 
           <ion-item id="contenedor">
               <ion-label  id="a">Nombre Empresa</ion-label>
-              <ion-input type="text" [(ngModel)]="Nombre_Empresa"></ion-input>
+              <ion-input type="text" [(ngModel)]="Nombre_Empresa" value="{{Clientes2.Nombre_Empresa}}"></ion-input>
           </ion-item>
 
           <ion-item id="contenedor">
               <ion-label  id="a">Pais</ion-label>
-              <ion-input type="text" [(ngModel)]="Pais"></ion-input>
+              <ion-input type="text" [(ngModel)]="Pais" value="{{Clientes2.Pais}}"></ion-input>
           </ion-item>
 
           <ion-item id="contenedor">
               <ion-label  id="a">Provincia</ion-label>
-              <ion-input type="text" [(ngModel)]="Provincia"></ion-input>
+              <ion-input type="text" [(ngModel)]="Provincia" value="{{Clientes2.Provincia}}"></ion-input>
           </ion-item>
 
+
+
       </ion-list>
--->
-	
-	<ion-item>
-	<label for="Name">Nombre:</label>
 
-    <input type="text" id="Name" name="Name" value="{{Cliente.Nombre}}"/>
+<button ion-button clear item-end (click)="btnUpdate(i)"><ion-icon name="add"></ion-icon></button>
 
-	 </ion-item>
-
-	 <ion-item>
-	<label for="Name">Primer Apellido:</label>
-
-    <input type="text" id="apellido1" name="apellido1" value="{{Cliente.Apellido1}}"/>
-	 </ion-item>
-
-	 <ion-item>
-	<label for="Name">Segundo Apellido:</label>
-
-    <input type="text" id="apellido2" name="apellido2" value="{{Cliente.Apellido2}}"/>
-	 </ion-item>
-
-
-	 <ion-item>
-	<label for="Name">Direccion:</label>
-
-    <input type="text" id="direccion" name="direccion" value="{{Cliente.Direccion}}"/>
-	 </ion-item>
-
-
-	 <ion-item>
-	<label for="Name">Codigo Postal:</label>
-
-    <input type="text" id="cp" name="cp" value="{{Cliente.Cp}}"/>
-	 </ion-item>
-
-	 <ion-item>
-	<label for="Name">Fecha Mantenimiento:</label>
-
-    <input type="text" id="Fecha" name="Fecha" value="{{Cliente.Date_mante}}"/>
-	 </ion-item>
-
-
-	 <ion-item>
-	<label for="Name">Nombre Empresa:</label>
-
-    <input type="text" id="Empresa" name="Empresa" value="{{Cliente.Nombre_Empresa}}"/>
-	 </ion-item>
-
-	
 </ion-content>

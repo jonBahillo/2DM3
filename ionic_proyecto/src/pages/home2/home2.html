@@ -1,8 +1,8 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Home Empleado
-      <button ion-button (click)="abrirPagina7()" id="button">
+      <button ion-item end (click)="salir()"><p item-end>Cerrar sesion</p></button>
+      <button ion-button (click)="faltafuncionalidad()" id="button">
 
       <img src="../../assets/imgs/campana.png" id="imga">
       </button>
@@ -27,7 +27,7 @@
 
 
 
-      <button ion-item (click)="abrirPagina8()" id="button2">
+      <button ion-item (click)="verEmpleado(item)" id="button2">
         <ion-icon  item-start><img src="../../assets/imgs/perfiles.png"></ion-icon>
         <a>Ver Perfil</a>
        <button ion-button id="btn"><ion-icon name="add" id="end"></ion-icon></button>
@@ -35,7 +35,7 @@
 
       <button ion-item (click)="abrirPagina9()" id="button2">
         <ion-icon  item-start><img src="../../assets/imgs/icono_proyecto.png"></ion-icon>
-        <a> Ver Proyectos</a>
+        <a>Ver Proyectos</a>
          <button ion-button id="btn"><ion-icon name="add" id="end"></ion-icon></button>
       </button>
 

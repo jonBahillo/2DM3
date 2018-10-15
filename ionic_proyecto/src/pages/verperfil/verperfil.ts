@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
+import { DatosProvider } from '../../providers/datos/datos';
 
 /**
  * Generated class for the VerperfilPage page.
@@ -18,12 +19,16 @@ import * as firebase from 'firebase';
 })
 export class VerperfilPage {
 
-Empleado;
-  constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
+Empleado:Observable<any[]>;
+item;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  	public afDB: AngularFireDatabase,
+  	 public datos: DatosProvider) {
 
   	
   	  this.Empleado=navParams.data.Empleados;
   	  console.log(this.Empleado);
+
   }
 
 }

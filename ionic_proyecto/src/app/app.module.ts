@@ -27,9 +27,7 @@ import { AñadirperfilPage } from '../pages/añadirperfil/añadirperfil';
 import { AñadirproyectoPage } from '../pages/añadirproyecto/añadirproyecto'; 
 import { BorrarproyectoPage } from '../pages/borrarproyecto/borrarproyecto';   
 import { EditarperfilPage } from '../pages/editarperfil/editarperfil';
-import { MeterclientePage } from '../pages/metercliente/metercliente';
-import { EmpleadoinfoPage } from '../pages/empleadoinfo/empleadoinfo';
-import { ProyectoinfoPage } from '../pages/proyectoinfo/proyectoinfo';        
+import { MeterclientePage } from '../pages/metercliente/metercliente';    
 
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -38,6 +36,10 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DatosProvider } from '../providers/datos/datos';
+import { VerperfilpropioPage } from '../pages/verperfilpropio/verperfilpropio';
+import { FaltafuncionalidadPage } from '../pages/faltafuncionalidad/faltafuncionalidad';
+import { EmpleadoinfoPage } from '../pages/empleadoinfo/empleadoinfo';
+import { ProyectoinfoPage } from '../pages/proyectoinfo/proyectoinfo';
 
 
 export const firebaseConfig ={
@@ -74,8 +76,11 @@ export const firebaseConfig ={
     BorrarproyectoPage,
     EditarperfilPage,
     MeterclientePage,
+    VerperfilpropioPage,
+    FaltafuncionalidadPage,
     EmpleadoinfoPage,
     ProyectoinfoPage
+
 
   ],
   imports: [
@@ -109,10 +114,10 @@ export const firebaseConfig ={
     BorrarproyectoPage,
     EditarperfilPage,
     MeterclientePage,
+    VerperfilpropioPage,
+    FaltafuncionalidadPage,
     EmpleadoinfoPage,
     ProyectoinfoPage
-    
-
   ],
   providers: [
     DatosProvider,

@@ -5,6 +5,7 @@ import { Home2Page } from '../home2/home2';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
+import { DatosProvider } from '../../providers/datos/datos';
 /**
  * Generated class for the LoginPage page.
  *
@@ -17,6 +18,7 @@ import * as firebase from 'firebase';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+
 
 //  usuarios:any;
 //  correo:string = "";
@@ -32,7 +34,7 @@ export class LoginPage {
   items:any []=[];
   Nombres: Observable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public datos: DatosProvider, afDB: AngularFireDatabase) {
 
 
 this.Nombres = afDB.list('Empleados').valueChanges();
@@ -53,10 +55,11 @@ acceder(){
 const personRef2: firebase.database.Reference = firebase.database().ref('/Empleados/');
 
 
+
 personRef2.on('value', Name2 => {
 this.Nombres = Name2.val();
 
-
+console.log(this.Nombres);
 
 
 //  console.log(Object.keys(this.Nombres).length);
@@ -64,19 +67,25 @@ this.Nombres = Name2.val();
 for (var i = 0; i < Object.keys(this.Nombres).length ; ++i) {
 
  this.id = Object.keys(this.Nombres)[i];
-//console.log(this.Nombres[this.id]);
+
+console.log(this.Nombres[this.id].DNI);
 
 
 if(this.Nombres[this.id].DNI == dni2 && this.Nombres[this.id].password == password2){
   //this.titulo="Usuario autentificado";
   //this.ocultar=true;
   //this.boton=false;
+  //console.log(this.Nombre[i].DNI);
+  this.datos.arreglo=[];
+  this.datos.arreglo.push(this.Nombres[this.id]);
+
   if (this.Nombres[this.id].Puesto == "Administrador") {
 //   localStorage.setItem("adm", '1');
 this.navCtrl.push(HomePage);
 }else{
 //  localStorage.setItem("adm", '0');
 this.navCtrl.push(Home2Page);
+
 }
 }
 

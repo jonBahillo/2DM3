@@ -1,11 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-     
-      <button ion-item end (click)="salir()">
- <ion-icon item-end name="exit"></ion-icon>
-   
- </button>
+      <button ion-item end (click)="salir()"><p item-end>Cerrar sesion</p></button>
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -24,14 +20,14 @@
       <button ion-item id="button2">
         <ion-icon  item-start><img src="../../assets/imgs/icono_empleados.svg"></ion-icon>
         <a>Gestion Empleados</a>
-         <button item-end id="btn"><ion-icon name="add"  ></ion-icon></button>
+         <button item-end id="btn"><ion-icon name="add" (click)="faltafuncionalidad()"></ion-icon></button>
       </button>
 
       <button ion-item id="button2">
         <ion-icon name='cart' item-start></ion-icon>
 
         <a>Gestion	Ventas</a>
-         <button item-end id="btn"><ion-icon name="add" ></ion-icon></button>
+         <button item-end id="btn"><ion-icon name="add" (click)="faltafuncionalidad()"></ion-icon></button>
       </button>
 
       <button ion-item id="button2">
