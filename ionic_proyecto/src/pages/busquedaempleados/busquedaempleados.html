@@ -18,9 +18,20 @@
             </ion-item>  -->
 
 
+
+
+<ion-searchbar placeholder="Ej: Don Ramon" showCancelButton color="danger" (ionInput)="getItems($event)"></ion-searchbar>
+
+<ion-list>
+  <ion-item *ngFor="let item of items">
+    {{ item }}
+    <button ion-button clear item-end (click)="verEmpleado(Empleados)">Ver</button>
+  </ion-item>
+</ion-list>
+
   <ion-list>
     <ion-item *ngFor="let Empleados of Empleados | async" id="shit">
-    	{{ Empleados.Nombre }}&nbsp;{{Empleados.Apellido1}}&nbsp;{{Empleados.Apellido2}}
+    	{{Empleados.Nombre}}
     	<button ion-button clear item-end (click)="verEmpleado(Empleados)">Ver</button>
       <!-- {{ item }} -->
     </ion-item>

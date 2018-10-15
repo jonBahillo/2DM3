@@ -5,11 +5,6 @@ import { VerperfilPage } from '../../pages/verperfil/verperfil';
 import { VerproyectosPage } from '../../pages/verproyectos/verproyectos';
 import { BusquedaempleadosPage } from '../../pages/busquedaempleados/busquedaempleados';
 import { DatosProvider } from '../../providers/datos/datos';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
-import * as firebase from 'firebase';
-import { VerperfilpropioPage } from '../../pages/verperfilpropio/verperfilpropio';
-import { FaltafuncionalidadPage } from '../../pages/faltafuncionalidad/faltafuncionalidad';
 
 /**
  * Generated class for the Home2Page page.
@@ -25,36 +20,21 @@ import { FaltafuncionalidadPage } from '../../pages/faltafuncionalidad/faltafunc
 })
 export class Home2Page {
 
-  Empleados: Observable<any[]>;
-  Dato;
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public afDB: AngularFireDatabase) {
-
-  this.Empleados = afDB.list('Empleados').valueChanges();
-  this.Dato=navParams.data.arreglo;
-  console.log(this.Empleados);
-  console.log(this.Dato);
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public serDatos: DatosProvider) {
   }
-//Abrir paginas
+
 abrirPagina7(){
 		this.navCtrl.push(VernotificacionesPage);
 	}
-	verEmpleado(Empleados){
-  		this.navCtrl.push(VerperfilpropioPage, {Empleados : Empleados}) ;
+	abrirPagina8(){
+		this.navCtrl.push(VerperfilPage);
 	}
-
 	abrirPagina9(){
 		this.navCtrl.push(VerproyectosPage);
 	}
 	abrirPagina10(){
 		this.navCtrl.push(BusquedaempleadosPage);
 	}
-
-  faltafuncionalidad(){
-    this.navCtrl.push(FaltafuncionalidadPage);
-  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Home2Page');

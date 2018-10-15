@@ -35,13 +35,8 @@ export class MeterclientePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, 
   						public afDB: AngularFireDatabase) {
 
-<<<<<<< HEAD
-  	this.Empleados = afDB.list('Clientes').valueChanges();
-this.Clientes=navParams.data.Clientes;
-=======
 
 
->>>>>>> pruebas
   
 
   }
@@ -54,11 +49,7 @@ this.Clientes=navParams.data.Clientes;
       {Apellido1: this.Apellido1,
        Apellido2: this.Apellido2,
        Cp: this.Cp,
-<<<<<<< HEAD
-       Date_mante: this.Date_mante,
-=======
        Date_mate: this.Date_mante,
->>>>>>> pruebas
        Direccion: this.Direccion,
        Nombre: this.Nombre,
        Nombre_Empresa: this.Nombre_Empresa,
@@ -77,11 +68,7 @@ this.Clientes=navParams.data.Clientes;
     this.Clientes.Nombre_Empresa="";
     this.Clientes.Pais="";
     this.Clientes.Provincia="";
-<<<<<<< HEAD
-    this.navCtrl.push(GestionclientesPage);
-=======
 	this.navCtrl.push(GestionclientesPage);
->>>>>>> pruebas
 
   }
 	

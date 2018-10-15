@@ -1,7 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
-import * as firebase from 'firebase';
 
 /*
   Generated class for the DatosProvider provider.
@@ -13,9 +10,8 @@ import * as firebase from 'firebase';
 export class DatosProvider {
 
 	usuarios= [];
-   arreglo:any []=[];
 
-  constructor(public afDB: AngularFireDatabase) {
+  constructor() {
     console.log('Hello DatosProvider Provider');
 
     this.usuarios = [
@@ -24,9 +20,6 @@ export class DatosProvider {
     {nombre:'Jon'},
     {nombre:'Iñaki'}
     ];
-
-
-
-}
+  }
 
 }

@@ -1,3 +1,4 @@
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ClienteinfoPage } from '../../pages/clienteinfo/clienteinfo'
 import { MeterclientePage } from '../../pages/metercliente/metercliente';
@@ -24,11 +25,7 @@ export class GestionclientesPage {
 
 	this.Clientes2 = afDB.list('Clientes').valueChanges();/****Cargamos datos del firebase de la tabla clientes******/
 
-<<<<<<< HEAD
-	this.afDB.list('Clientes').snapshotChanges().subscribe(_data =>{
-=======
 	this.afDB.list("Clientes").snapshotChanges().subscribe(_data =>{/*****Cogemos la key de cada campo de la tabla clientes ****/
->>>>>>> pruebas
       this.llave = _data;
       console.log(this.llave);
 
@@ -40,12 +37,10 @@ export class GestionclientesPage {
 
 /************FUNCIONES BOTONES Y pasar datos a  paginaa*******************/
 
- verinfocliente(Clientes, i){
-		        this.navCtrl.push(ClienteinfoPage, { Clientes:Clientes  , i } );
+ verinfocliente(Clientes){
+		        this.navCtrl.push(ClienteinfoPage, { Clientes : Clientes });
 
 	}
-  
-
 
 
 	anadircliente(Clientes){
@@ -70,7 +65,6 @@ export class GestionclientesPage {
     location.reload();/*REFRESCA LA PAGINA*/
 
   }
-
 
 
 }
