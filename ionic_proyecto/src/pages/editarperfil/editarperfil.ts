@@ -49,6 +49,7 @@ this.item = navParams.data.i;
 this.Clientes2=navParams.data.Cliente;
 
 
+
 this.afDB.list("Clientes").valueChanges().subscribe(_data =>{
       this.arrData = _data;
 this.aEditar=(this.arrData[this.item]);

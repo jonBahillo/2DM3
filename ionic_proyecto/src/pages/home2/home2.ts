@@ -9,6 +9,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
 import { VerperfilpropioPage } from '../../pages/verperfilpropio/verperfilpropio';
+import { FaltafuncionalidadPage } from '../../pages/faltafuncionalidad/faltafuncionalidad';
 
 /**
  * Generated class for the Home2Page page.
@@ -28,8 +29,7 @@ export class Home2Page {
   Dato;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public afDB: AngularFireDatabase) {
 
   this.Empleados = afDB.list('Empleados').valueChanges();
   this.Dato=navParams.data.arreglo;
@@ -37,7 +37,7 @@ export class Home2Page {
   console.log(this.Dato);
 
   }
-
+//Abrir paginas
 abrirPagina7(){
 		this.navCtrl.push(VernotificacionesPage);
 	}
@@ -51,6 +51,10 @@ abrirPagina7(){
 	abrirPagina10(){
 		this.navCtrl.push(BusquedaempleadosPage);
 	}
+
+  faltafuncionalidad(){
+    this.navCtrl.push(FaltafuncionalidadPage);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Home2Page');

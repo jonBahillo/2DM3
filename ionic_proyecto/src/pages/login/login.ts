@@ -19,23 +19,22 @@ import { DatosProvider } from '../../providers/datos/datos';
 })
 export class LoginPage {
 
-//	usuarios:any;
+
+//  usuarios:any;
 //  correo:string = "";
-//  contrasena:string= "";
+//  password:string= "";
   titulo="Autentificate";
   adm=0;
   ocultar = false;
   boton = true;
   dni = "";
-  contrasena="";
+  password="";
   i = 1;
- 
+  id = "";
   items:any []=[];
   Nombres: Observable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
-              public afDB: AngularFireDatabase,
-              public datos: DatosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public datos: DatosProvider, afDB: AngularFireDatabase) {
 
 
 this.Nombres = afDB.list('Empleados').valueChanges();
@@ -46,68 +45,95 @@ this.Nombres = afDB.list('Empleados').valueChanges();
 
 
 acceder(){
- 
+
   let encontrado:boolean =false;
+  var password2 = this.password;
+  var dni2 = this.dni;
+
+
 
 const personRef2: firebase.database.Reference = firebase.database().ref('/Empleados/');
+
+
 
 personRef2.on('value', Name2 => {
 this.Nombres = Name2.val();
 
-  for (var i = 1; i < Name2.val().length; ++i) {
-  const personRef: firebase.database.Reference = firebase.database().ref('/Empleados/'+i);
-  if (personRef != null){
-    personRef.on('value', Name => {
-      this.Nombres = Name.val();
-      if(Name.val().DNI == this.dni && Name.val().Contraseña == this.contrasena){
-        this.titulo="Usuario autentificado";
-        this.datos.arreglo.push(this.Nombres);
-        console.log(this.datos.arreglo);
-        this.ocultar=true;
-        this.boton=false;
+console.log(this.Nombres);
 
 
+//  console.log(Object.keys(this.Nombres).length);
 
-       /* localStorage.setItem("Apellido1", Name.val().Apellido1);
-        localStorage.setItem("Apellido2", Name.val().Apellido2);
-        localStorage.setItem("CP", Name.val().CP);
-        localStorage.setItem("DNI", Name.val().DNI);
-        localStorage.setItem("Direccion", Name.val().Direccion);
-        localStorage.setItem("Nombre", Name.val().Nombre);
-        localStorage.setItem("Pais", Name.val().Pais);
-        localStorage.setItem("Provincia", Name.val().Provincia);
-        localStorage.setItem("Puesto", Name.val().Puesto);*/
+for (var i = 0; i < Object.keys(this.Nombres).length ; ++i) {
 
-        if (Name.val().Puesto == "Administrador") {
-       localStorage.setItem("adm", 1);
+ this.id = Object.keys(this.Nombres)[i];
+
+console.log(this.Nombres[this.id].DNI);
+
+
+if(this.Nombres[this.id].DNI == dni2 && this.Nombres[this.id].password == password2){
+  //this.titulo="Usuario autentificado";
+  //this.ocultar=true;
+  //this.boton=false;
+  //console.log(this.Nombre[i].DNI);
+  this.datos.arreglo=[];
+  this.datos.arreglo.push(this.Nombres[this.id]);
+
+  if (this.Nombres[this.id].Puesto == "Administrador") {
+//   localStorage.setItem("adm", '1');
+this.navCtrl.push(HomePage);
 }else{
-  localStorage.setItem("adm", 0);
+//  localStorage.setItem("adm", '0');
+this.navCtrl.push(Home2Page);
+
+}
+}
+
+
+  //const personRef: firebase.database.Reference = firebase.database().ref('/Empleados/'+i);
+  /*if (personRef != null){
+    personRef.on('value', Name => {
+      this.Nombres = Name.val()
+
+      if(Name.val().DNI == dni2 && Name.val().password == password2){
+        //this.titulo="Usuario autentificado";
+        //this.ocultar=true;
+        //this.boton=false;
+        if (Name.val().Puesto == "Administrador") {
+    //   localStorage.setItem("adm", '1');
+    this.navCtrl.push(HomePage);
+}else{
+//  localStorage.setItem("adm", '0');
+ this.navCtrl.push(Home2Page);
 }
 
         //el encontrado no es necesario
         encontrado=true;
       }
+
       });
-    }
+  //  }*/
   };
 });
-console.log(encontrado);
+
+
 if (!encontrado){
-  console.log('el correo introducido no es de ningun usuario registrado');
+  //console.log('el dni o la contraseña introducidas no es de ningun de los usuarios registrado');
+
      this.dni = "";
-     this.contrasena= "";
+     this.password= "";
      this.titulo="Autentificate";
    }
 
 }
 
-ver_productos(item){
-  console.log('Accediendo');
-  if (localStorage.getItem("adm")==1){
+ver_productos(){
+  /*console.log('Accediendo');
+  if (localStorage.getItem("adm")=='1'){
     this.navCtrl.push(HomePage);
   }else{
-      this.navCtrl.push(Home2Page, { arreglo:item });
-  }
+      this.navCtrl.push(Home2Page);
+  }*/
 
   }
 

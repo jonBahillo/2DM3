@@ -19,6 +19,8 @@ import { DatosProvider } from '../../providers/datos/datos';
 export class VerperfilpropioPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public datos: DatosProvider, afDB: AngularFireDatabase) {
+
+  	
   }
 
   ionViewDidLoad() {

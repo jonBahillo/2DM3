@@ -1,7 +1,6 @@
 <ion-header>
 
   <ion-navbar>
-<ion-item *ngFor="let Cliente of Clientes | async"></ion-item>
 
         <ion-title>{{Cliente.Nombre}}&nbsp; {{Cliente.Apellido1}}&nbsp; {{Cliente.Apellido2}}</ion-title>
 
@@ -11,6 +10,7 @@
 
 
 <ion-content>
+
 
 
 <ion-list>
@@ -23,41 +23,38 @@
 -->
 
     <p>PAIS:</p>    
-        <h2 ion-text color="primary">{{Cliente.Pais}}</h2>
-
+        <h2 ion-text color="primary">{{Cliente2.Pais}}</h2>
     </ion-item>
 
     <ion-item>
         <p>PROVINCIA:</p>
-        <h2 ion-text color="primary">{{Cliente.Provincia}}</h2>
+        <h2 ion-text color="primary">{{Cliente2.Provincia}}</h2>
     </ion-item>
 
     <ion-item>
         <p>DIRECCION:</p>
-    <h2 ion-text color="primary">{{Cliente.Direccion}}</h2>
+    <h2 ion-text color="primary">{{Cliente2.Direccion}}</h2>
     </ion-item>
 
     <ion-item>
         <p>CODIGO POSTAL:</p>
-    <h2 ion-text color="primary">{{Cliente.Cp}}</h2>
+    <h2 ion-text color="primary">{{Cliente2.Cp}}</h2>
 
     </ion-item>
 
     <ion-item>
         <p>FECHA MANTENIMIENTO:</p>
-        <h2 ion-text color="primary">{{Cliente.Date_mante}}</h2>
+        <h2 ion-text color="primary">{{Cliente2.Date_mante}}</h2>
 
     </ion-item>
 
     <ion-item>
         <p>NOMBRE EMPRESA:</p>
-        <h2 ion-text color="primary">{{Cliente.Nombre_Empresa}}</h2>
+        <h2 ion-text color="primary">{{Cliente2.Nombre_Empresa}}</h2>
 
     </ion-item>
-    
     <ion-item>
          <p>Editar Usuario</p>
-      
       <button ion-button clear item-end (click)="editarcliente(Cliente)"><ion-icon name="add"></ion-icon>
     </button>
      </ion-item>

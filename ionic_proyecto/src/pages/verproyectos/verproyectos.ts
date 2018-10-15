@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProyectobuscadoPage } from '../../pages/proyectobuscado/proyectobuscado'
+import { FaltafuncionalidadPage } from '../../pages/faltafuncionalidad/faltafuncionalidad';
 
 /**
  * Generated class for the VerproyectosPage page.
@@ -22,7 +23,7 @@ export class VerproyectosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad VerproyectosPage');
   }
-abrirPagina11(){
-		this.navCtrl.push(ProyectobuscadoPage);
+faltafuncionalidad(){
+		this.navCtrl.push(FaltafuncionalidadPage);
 	}
 }

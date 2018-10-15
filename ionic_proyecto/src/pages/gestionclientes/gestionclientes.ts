@@ -25,7 +25,7 @@ export class GestionclientesPage {
 
 	this.Clientes2 = afDB.list('Clientes').valueChanges();
 
-	this.afDB.list("Clientes").snapshotChanges().subscribe(_data =>{
+	this.afDB.list('Clientes').snapshotChanges().subscribe(_data =>{
       this.llave = _data;
       console.log(this.llave);
 
@@ -38,15 +38,17 @@ export class GestionclientesPage {
 
 
  verinfocliente(Clientes, i){
-		        this.navCtrl.push(ClienteinfoPage, { Clientes : Clientes }, { i:i });
+		        this.navCtrl.push(ClienteinfoPage, { Clientes:Clientes  , i } );
 
 	}
+  
+
 
 
 	anadircliente(Clientes){
 		
 		this.navCtrl.push(MeterclientePage, { Clientes : Clientes });
-		console.log(this.Clientes);
+		//console.log(this.Clientes);
 
 	}
 

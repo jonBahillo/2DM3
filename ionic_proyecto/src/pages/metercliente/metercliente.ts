@@ -38,8 +38,8 @@ export class MeterclientePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, 
   						public afDB: AngularFireDatabase) {
 
-  	
-
+  	this.Empleados = afDB.list('Clientes').valueChanges();
+this.Clientes=navParams.data.Clientes;
   
 
   }
