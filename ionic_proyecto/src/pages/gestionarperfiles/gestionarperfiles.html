@@ -2,38 +2,43 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>gestionarperfiles</ion-title>
+    <ion-title>
+      
+      <button ion-item end (click)="salir3()">
+       <ion-icon item-end name="exit"></ion-icon>
+       </button>
+
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-<ion-list>
+
+	
+<ion-item *ngFor="let Empleados of Perfiles | async; let i = index">
+		    {{Empleados.Nombre}}
+        {{Empleados.Apellido1}}
+        {{Empleados.Apellido2}}
+        <button ion-button clear item-end (click)="verinfoempleado2(Empleados)">Ver</button>
+         <button ion-button clear item-end (click)="borrarempleado(i)"><ion-icon name="trash"></ion-icon></button>
+   
+</ion-item>	
+
 
 <ion-item>
+         <p>Añadir Empleado</p>
       
-      <h2 ion-text color="dark">Añadir usuario</h2>
-      
-      <button ion-button clear item-end (click)="meterusuario()"><ion-icon name="add"></ion-icon></button>
+      <button ion-button clear item-end (click)="anadirempleado(Empleados)">
+      	<ion-icon name="add"></ion-icon>
+    </button>
 
-    </ion-item>
-
-
-<ion-item>
-      
-      <h2 ion-text color="dark">Borrar usuario</h2>
-      
-      <button ion-button clear item-end (click)="borrarusuario()"><ion-icon name="trash"></ion-icon>
-</button>
-      
-    </ion-item>
+     </ion-item>
 
 
-</ion-list>
+
+
+
 
 </ion-content>
-<!--
-
-
--->

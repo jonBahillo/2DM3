@@ -2,34 +2,30 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>gestionarproyectos</ion-title>
+    <ion-title>Gestionar Proyectos</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-<ion-list>
+<ion-content>
+  
+<ion-item *ngFor="let Proyecto of ProyectosName | async; let i = index">
+        {{Proyecto.NombreP}}
+       <button ion-button clear item-end (click)="verinfoproyecto(Proyecto)">Ver</button>
+       <button ion-button clear item-end (click)="borrarproyecto(i)"><ion-icon name="trash"></ion-icon></button>
+        
+            </ion-item>
 
-<ion-item>
+
+  <ion-item>
+         <p>Añadir Proyecto</p>
       
-      <h2 ion-text color="dark">Añadir usuario</h2>
-      
-      <button ion-button clear item-end (click)="meterproyecto()"><ion-icon name="add"></ion-icon></button>
-
-    </ion-item>
-
-
-<ion-item>
-      
-      <h2 ion-text color="dark">Borrar usuario</h2>
-      
-      <button ion-button clear item-end (click)="borrarproyecto()"><ion-icon name="trash"></ion-icon>
-</button>
-      
-    </ion-item>
+      <button ion-button clear item-end (click)="anadirproyecto(Proyecto)">
+      	<ion-icon name="add"></ion-icon>
+    </button>
+     </ion-item>  
 
 
-</ion-list>
 
 </ion-content>

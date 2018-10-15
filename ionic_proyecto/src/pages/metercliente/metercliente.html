@@ -1,71 +1,60 @@
-<!--
-  Generated template for the MeterclientePage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>metercliente</ion-title>
+    <ion-title>AñadirCliente</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-<!--
-	<ion-item>
 
-	<ion-input> [(ngModel)]="Nombre"></ion-input>
-		
-	</ion-item>
--->
 <ion-list>
 
           
 
-          <ion-item id="contenedor">
+          <ion-item id="contenedor1">
               <ion-label stacked id="a">Apellido2</ion-label>
-              <ion-input type="text" [(ngModel)]="Apellido2"></ion-input>
+              <ion-input type="text"  [(ngModel)]="Apellido2"></ion-input>
           </ion-item>
 
-          <ion-item id="contenedor">
+          <ion-item id="contenedor1">
               <ion-label stacked id="a">Apellido1</ion-label>
               <ion-input type="dni" [(ngModel)]="Apellido1"></ion-input>
           </ion-item>
 
-          <ion-item id="contenedor">
+          <ion-item id="contenedor1">
               <ion-label stacked id="a">Nombre</ion-label>
               <ion-input type="text" [(ngModel)]="Nombre"></ion-input>
           </ion-item>
 
-          <ion-item id="contenedor">
+          <ion-item id="contenedor1">
               <ion-label stacked id="a">Codigo Postal</ion-label>
               <ion-input type="text" [(ngModel)]="Cp"></ion-input>
           </ion-item>
 
-          <ion-item id="contenedor">
+          <ion-item id="contenedor1">
               <ion-label stacked id="a">Fecha Mantenimiento</ion-label>
-              <ion-input type="text" [(ngModel)]="Date_mate"></ion-input>
+              <ion-input type="text" [(ngModel)]="Date_mante"></ion-input>
           </ion-item>
 
-          <ion-item id="contenedor">
+          <ion-item id="contenedor1">
               <ion-label stacked id="a">Direccion</ion-label>
               <ion-input type="text" [(ngModel)]="Direccion"></ion-input>
           </ion-item>
 
-          <ion-item id="contenedor">
+          <ion-item id="contenedor1">
               <ion-label stacked id="a">Nombre Empresa</ion-label>
               <ion-input type="text" [(ngModel)]="Nombre_Empresa"></ion-input>
           </ion-item>
 
-          <ion-item id="contenedor">
+          <ion-item id="contenedor1">
               <ion-label stacked id="a">Pais</ion-label>
               <ion-input type="text" [(ngModel)]="Pais"></ion-input>
           </ion-item>
 
-          <ion-item id="contenedor">
+          <ion-item id="contenedor1">
               <ion-label stacked id="a">Provincia</ion-label>
               <ion-input type="text" [(ngModel)]="Provincia"></ion-input>
           </ion-item>
@@ -73,7 +62,7 @@
       </ion-list>
 
 
-<button ion-button outline item-end icon-start (click)="btnAddClicked(Clientes)" ><ion-icon name="create"></ion-icon>Añadir a Firebase</button>
+<button ion-button outline item-end icon-start (click)="btnAddClicked(Clientes)" ><ion-icon name="create"></ion-icon>Añadir Cliente</button>
 <!--<button (click)="btnAddCliked(Clientes)">Add</button>
 -->
 </ion-content>

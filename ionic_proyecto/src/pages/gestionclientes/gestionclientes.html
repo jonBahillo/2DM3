@@ -1,6 +1,13 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Gestion clientes</ion-title>
+    <ion-title>
+
+     
+       <button ion-item end (click)="salir2()">
+       <ion-icon item-end name="exit"></ion-icon>
+       </button>
+
+    </ion-title>
 
   </ion-navbar>
 </ion-header>
@@ -18,7 +25,7 @@
 
 
   <ion-item>
-         <p>Añadir Usuario</p>
+         <p>Añadir Cliente</p>
       
       <button ion-button clear item-end (click)="anadircliente(Clientes)">
       	<ion-icon name="add"></ion-icon>

@@ -12,21 +12,22 @@ import { EditarperfilPage } from '../../pages/editarperfil/editarperfil';
   templateUrl: 'clienteinfo.html',
 })
 export class ClienteinfoPage {
-	//Clientes2: Observable<any[]>;
+	/********Creamos array cliente*************/
 	Cliente;
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
 
-    //this.Cliente = this.navParams(Cliente);
+    /******Cogemos los datos de cada cliente y los metemos en el array********/
       this.Cliente=navParams.data.Clientes;
       console.log(this.Cliente);
-      //this.Clientes = afDB.list('/Clientes').valueChanges();
+    
       
 
       
 
   }
+  /*******FUNCIONES BOTONES*******/
 
 editarcliente(Clientes){
 

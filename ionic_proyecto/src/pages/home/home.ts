@@ -7,6 +7,7 @@ import { GestionarperfilesPage } from '../../pages/gestionarperfiles/gestionarpe
 import { GestionarproyectosPage } from '../../pages/gestionarproyectos/gestionarproyectos';
 import { GestionarofertasPage } from '../../pages/gestionarofertas/gestionarofertas';
 import { GestionarventasPage } from '../../pages/gestionarventas/gestionarventas';
+import { LoginPage } from '../../pages/login/login';
 
 @Component({
   selector: 'page-home',
@@ -17,16 +18,18 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-
+/*********************Funciones boton MENU ADMIN***********************/
+/*
 	abrirPagina2(){
 		this.navCtrl.push(GestionarempleadosPage);
 
 	}
-
+	*/
+/*
 	abrirPagina3(){
 		this.navCtrl.push(GestionarventasPage);
 
-	}
+	}*/
 
 	abrirPagina4(){
 		this.navCtrl.push(GestionarproyectosPage);
@@ -44,6 +47,19 @@ export class HomePage {
 
 	}
 
+	salir(){
+		this.navCtrl.push(LoginPage);
+		location.reload();/*REFRESCA LA PAGINA*/
+
+	}
+
+
+
+
+	
+
 }
+
+
 
 
