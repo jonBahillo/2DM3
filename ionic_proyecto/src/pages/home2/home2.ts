@@ -43,6 +43,9 @@ export class Home2Page {
 abrirPagina7(){
 		this.navCtrl.push(VernotificacionesPage);
 	}
+
+//Coge informacion del usuario que ha abierto sesion
+
 	verEmpleado(Empleados){
   		this.navCtrl.push(VerperfilpropioPage, {Empleados : Empleados}) ;
 	}
@@ -53,7 +56,7 @@ abrirPagina7(){
 	abrirPagina10(){
 		this.navCtrl.push(BusquedaempleadosPage);
 	}
-
+//funcionalidades no implementadas
   faltafuncionalidad(){
     this.navCtrl.push(FaltafuncionalidadPage);
   }
@@ -61,7 +64,7 @@ abrirPagina7(){
   ionViewDidLoad() {
     console.log('ionViewDidLoad Home2Page');
   }
-
+//Cerrar sesion
   salir(){
     this.navCtrl.push(LoginPage);
     location.reload();

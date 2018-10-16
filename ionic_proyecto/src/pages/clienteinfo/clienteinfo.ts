@@ -7,6 +7,7 @@ import { EditarperfilPage } from '../../pages/editarperfil/editarperfil';
 import { MeterclientePage } from '../../pages/metercliente/metercliente';
 import { List } from 'ionic-angular';
 import { Component, ViewChild } from '@angular/core';
+import { GestionclientesPage } from '../../pages/gestionclientes/gestionclientes'
 
 
 @IonicPage()
@@ -54,7 +55,7 @@ this.Cliente = afDB.list('Clientes').valueChanges();
   anadircliente(Clientes){
     
     this.navCtrl.push(MeterclientePage, { Clientes : Clientes });
-    //console.log(this.Clientes);
+
 
 
 
@@ -64,22 +65,20 @@ this.Cliente = afDB.list('Clientes').valueChanges();
   borrarcliente(i2){
   console.log(i2);
   
-      //tenemos que pasar un parametro de eliminacion.
-      //this.afDB.list("myUsers").remove(usuarios[i]);
+
       this.afDB.list('Clientes').remove(this.llave[i2].key);
-      //console.log(this.Clientes2[i].key);
-      //this.afDB.list("/myUsers/").remove(this.arrData[usuarios].$key);
-      //this.afDB.collection('/myUsers/${ this.arrData[usuarios].$key }').remove();
+
 
    
 }
-
+//Esteban dijo que hicieramos asi el update
 editarcliente(Clientes){
 
 
-this.anadircliente(Clientes)
+this.anadircliente(Clientes);
 
 this.borrarcliente(this.i2);
+
 
 }
 
